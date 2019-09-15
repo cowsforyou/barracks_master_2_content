@@ -1,7 +1,16 @@
 <root>
     <scripts>
         <include src="file://{resources}/scripts/clicks.js" />
-        <include src="file://{resources}/scripts/building_helper.js" />
+        <include src="file://{resources}/scripts/building/colors.js" />
+        <include src="file://{resources}/scripts/building/load_root.js" />
+        <include src="file://{resources}/scripts/building/settings_kv_options.js" />
+
+        <include src="file://{resources}/scripts/building/helper.js" />
+
+        <include src="file://{resources}/scripts/building/start_building_helper.js" />
+        <include src="file://{resources}/scripts/building/end_building_helper.js" />
+
+        <include src="file://{resources}/scripts/building/event_hooks.js" />
     </scripts>
     <script>
         $.Msg("Compiled Building Helper!");
