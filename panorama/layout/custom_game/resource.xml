@@ -9,9 +9,13 @@
 		$.Msg( "Compiled Panorama Resource!" );
 	</script>
 	<Panel hittest="false" class='ResourcePanel'>
-		<Panel class="LumberPanel">
-			<Label id="LumberText" text="0" html="true" class="TitleFont" />
-			<Image hittest="false" id="LumberIcon" src="file://{images}/custom_game/lumber_icon.png" />
+		<Panel class="ResourceSubPanel LumberPanel">
+			<Label id="LumberText" class="ResourceName" text="0" />
+			<Image hittest="false" class="ResourceIcon" src="file://{images}/custom_game/lumber_icon.png" />
+		</Panel>
+		<Panel class="ResourceSubPanel GoldPanel">
+			<Label id="GoldText" class="ResourceName" text="0" />
+			<Image hittest="false" class="ResourceIcon" src="file://{images}/custom_game/lumber_icon2.png" />
 		</Panel>
 	</Panel>
 </root>

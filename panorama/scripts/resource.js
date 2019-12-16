@@ -1,12 +1,16 @@
 "use strict";
 
-function OnPlayerLumberChanged ( args ) {
-	var iPlayerID = Players.GetLocalPlayer()
-	var lumber = args.lumber
-	//$.Msg("Player "+iPlayerID+" Lumber: "+lumber)
-	$('#LumberText').text = lumber
+function OnPlayerLumberChanged ( playerData ) {
+	//$.Msg("Player "+iPlayerID+" Lumber: "+lumber);
+	$('#LumberText').text = playerData.lumber;
 }
 
 (function () {
 	GameEvents.Subscribe( "player_lumber_changed", OnPlayerLumberChanged );
+})();
+
+(function UpdateGold () {
+	const playerGold = Players.GetGold(Players.GetLocalPlayer());
+	$('#GoldText').text = playerGold;
+	$.Schedule(0.1, UpdateGold);
 })();
