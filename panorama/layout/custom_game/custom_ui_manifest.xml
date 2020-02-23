@@ -56,9 +56,6 @@
     //Lumber Resource
     <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/resource.xml" />
 
-    //Team Scoreboard
-    <CustomUIElement type="FlyoutScoreboard" layoutfile="file://{resources}/layout/custom_game/scoreboard.xml" />
-
     //Used to play sounds on client
     <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/sounds.xml" />
 
