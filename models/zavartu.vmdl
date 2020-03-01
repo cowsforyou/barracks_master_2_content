@@ -75,8 +75,10 @@
 						m_HitBoxes = 
 						[
 							{
+								m_name = "cube2"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
+								m_sBoneName = "cube2"
 								m_vMinBounds = [ -100.796417, 0.0, -70.0 ]
 								m_vMaxBounds = [ 73.664368, 266.676361, 59.433643 ]
 								m_bTranslationOnly = false
@@ -107,6 +109,8 @@
 			m_Vanim = 
 			[
 				{
+					m_Animationname = "cube2"
+					m_Filepath = "models/cube2.fbx"
 					m_nStartframe = 0
 					m_nEndframe = 23
 					m_flFps = 24.0
