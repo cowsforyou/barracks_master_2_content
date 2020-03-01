@@ -78,7 +78,7 @@
 								m_name = "cube2"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
-								m_sBoneName = "cube2"
+								m_sBoneName = "cube"
 								m_vMinBounds = [ -100.796417, 0.0, -70.0 ]
 								m_vMaxBounds = [ 73.664368, 266.676361, 59.433643 ]
 								m_bTranslationOnly = false
