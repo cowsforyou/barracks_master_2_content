@@ -1,0 +1,6 @@
+<root>
+    <scripts>
+        <include src="file://{resources}/scripts/statcollection.js" /> 
+    </scripts>
+    <Panel></Panel>
+</root>
