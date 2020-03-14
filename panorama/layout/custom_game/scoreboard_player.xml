@@ -30,7 +30,7 @@
 					<Label id="PlayerName" text="AAAAA" />
 					<Label id="HeroNameAndDescription" text="#custom_scoreboard_hero_name_and_desc" />
 				</Panel>
-				<Label id="TeammateGoldAmount" text="999" />
+				<!-- <Label id="TeammateGoldAmount" text="999" /> -->
 				<Button id="MuteButton" onactivate="ToggleMute();" />
 			</Panel>
 			<Panel id="CreepScoreContainer" class="ScoreCol_CS ScoreboardPanel">
@@ -39,13 +39,12 @@
 			<Panel id="NetworthContainer" class="ScoreCol_NetWorth ScoreboardPanel">
 				<Label id="NetWorth" text="999" />
 			</Panel>
-			<Panel id="GoldContainer" class="ScoreCol_Gold ScoreboardPanel">
+			<!-- <Panel id="GoldContainer" class="ScoreCol_Gold ScoreboardPanel">
 				<Label id="Gold" text="999" />
 			</Panel>
 			<Panel id="LumberContainer" class="ScoreCol_Lumber ScoreboardPanel">
 				<Label id="Lumber" text="999" />
-			</Panel>
-
+			</Panel> -->
 		</Panel>
 		<Panel id="UltimateIndicatorBG" class="UltimateIndicatorShared" />
 		<Panel id="UltimateIndicator" class="UltimateIndicatorShared" />

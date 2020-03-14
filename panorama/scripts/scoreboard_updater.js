@@ -117,13 +117,17 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
 
         var cs = CustomNetTables.GetTableValue("scores", playerId)["cs"]
         var netWorth = CustomNetTables.GetTableValue("scores", playerId)["netWorth"]
-        var lumber = CustomNetTables.GetTableValue("scores", playerId)["lumber"]
-        var gold = CustomNetTables.GetTableValue("scores", playerId)["gold"]    
+
+        // disabling lumber and gold from scoreboard
+            // var lumber = CustomNetTables.GetTableValue("scores", playerId)["lumber"]
+            // var gold = CustomNetTables.GetTableValue("scores", playerId)["gold"]    
 
         _ScoreboardUpdater_SetTextSafe( playerPanel, "CS", cs );
         _ScoreboardUpdater_SetTextSafe( playerPanel, "NetWorth", netWorth );
-        _ScoreboardUpdater_SetTextSafe( playerPanel, "Lumber", lumber );
-        _ScoreboardUpdater_SetTextSafe( playerPanel, "Gold", gold );
+
+        // disabling lumber and gold from scoreboard
+        // _ScoreboardUpdater_SetTextSafe( playerPanel, "Lumber", lumber );
+        // _ScoreboardUpdater_SetTextSafe( playerPanel, "Gold", gold );
 
         //_ScoreboardUpdater_SetTextSafe( playerPanel, "Kills", playerInfo.player_kills );
         //_ScoreboardUpdater_SetTextSafe( playerPanel, "Deaths", playerInfo.player_deaths );
