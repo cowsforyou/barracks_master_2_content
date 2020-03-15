@@ -5,12 +5,12 @@ const toolTips = {
 	gold: {
 		toolTipUI: $("#ResourceGold"),
 		title: `Gold`,
-		toolTip: `This text is meant to be replaced`,
+		toolTip: `Gold is earned by killing enemy units and structures.`,
 	},
 	lumber: {
 		toolTipUI: $("#ResourceLumber"),
 		title: `Lumber`,
-		toolTip: `This text is meant to be replaced`,
+		toolTip: `Lumber is earned by mining from Giant Trees.`,
 	},
 };
 
