@@ -5,10 +5,10 @@
 
 .AddonLoadingRoot
 {
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    overflow: clip;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+  background-image: url(file://{images}/custom_game/loading_screen/background_05.png);
 }
 
 #TitlePanel
@@ -30,13 +30,144 @@
   text-shadow: 2px 2px 2px #000000;
 }
 
-.AddonLoadingRoot
+
+
+/*-------------------------
+Left Panel Backgrounds
+-------------------------*/
+.BM_Left_Backgrounds
 {
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: 100% 100%;
-  background-image: url(file://{images}/custom_game/loading_screen/bm2_bg.png);
-  background-size: cover;
+	horizontal-align: left;
+	vertical-align: top;
+	margin-top: 72px;
+  margin-left: 21px;
+}
+
+#UpdatesPanel
+{
+	horizontal-align: left;
+	vertical-align: top;
+	width: 430px;
+	height: 380px;
+	opacity: .98;
+  background-color: black;
+  box-shadow: 0 0 8px 0 rgba(215, 138, 5, 0.75);
+}
+
+#LadderPanel
+{
+	width: 250px;
+	height: 680px;
+	margin-left: 449px;
+	opacity: .98;
+  background-color: black;
+  box-shadow: 0 0 8px 0 rgba(215, 138, 5, 0.75);
+}
+
+#BannerPanel
+{
+	width: 430px;
+	height: 280px;
+	margin-top: 400px;
+	opacity: .98;
+  background-color: black;
+  box-shadow: 0 0 8px 0 rgba(215, 138, 5, 0.75);
+}
+
+/*-------------------------
+Left Panel Items
+-------------------------*/
+
+.BM_Left_Items
+{
+	horizontal-align: left;
+	vertical-align: top;
+	width: 675px;
+	height: 700px;
+	margin-top: 72px;
+	margin-left: 21px;
+}
+
+#BM_Updates
+{
+	horizontal-align: left;
+	vertical-align: top;
+	width: 404px;
+	height: 380px;
+	flow-children: down;
+}
+
+#UpdatesTitle
+{
+	font-size: 30px;
+	font-weight: bold;
+	color: #ffffff;
+	text-shadow: 2px 2px 2px #000000;
+	horizontal-align: left;
+	padding-left: 15px;
+	padding-top: 10px;
+}
+
+#UpdatesText
+{
+	font-size: 15px;
+  color: #ffffff;
+  padding-top: 10px;
+	padding-left: 15px;
+	padding-right: 15px;	
+}
+
+/*-- Ladder Panel --*/
+
+#BM_Ladder
+{
+	width: 250px;
+	height: 680px;
+	margin-left: 449px;
+	flow-children: down;
+}
+
+#LadderTitle
+{
+	horizontal-align: left;
+	font-size: 30px;
+	font-weight: bold;
+	color: #ffffff;
+	text-shadow: 2px 2px 2px #000000;
+	padding-left: 15px;
+	padding-top: 10px;
+}
+
+#LadderPlayerPanel
+{
+	width: 250px;
+	height: 605px;
+	margin-top: 0px;
+	flow-children: down;
+}
+
+
+#LadderText
+{
+	vertical-align: bottom;
+	margin-bottom: 15px;
+	horizontal-align: center;
+	font-size: 16px;
+	color: #ffffff;
+}
+
+/*-- Banner Panel--*/
+
+#BM_Banner
+{
+	width: 430px;
+	height: 280px;
+	margin-top: 400px;
+}
+
+#Banner01
+{
+	opacity: 1.0;
 }
 
 /*#CustomBg
