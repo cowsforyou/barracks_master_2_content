@@ -66,12 +66,13 @@ function SendCancelCommand( params )
 }
 
 function RegisterGNV(msg){
+    // $.Msg('msgmsg', msg)
     var GridNav = [];
     var squareX = msg.squareX
     var squareY = msg.squareY
     var boundX = msg.boundX
     var boundY = msg.boundY
-    $.Msg("Registering GNV ["+squareX+","+squareY+"] ","Min Bounds: X="+boundX+", Y="+boundY)
+    // $.Msg("Registering GNV ["+squareX+","+squareY+"] ","Min Bounds: X="+boundX+", Y="+boundY)
 
     var arr = [];
     // Thanks to BMD for this method
@@ -101,15 +102,15 @@ function RegisterGNV(msg){
     Root.boundY = boundY
 
     // ASCII Art
-    /*
-    for (var i = 0; i<squareY; i++) {
-        var a = [];
-        for (var j = 0; j<squareX; j++){
-            a.push((GridNav[i][j] == 1 ) ? '=' : '.');
-        }
+    
+    // for (var i = 0; i<squareY; i++) {
+    //     var a = [];
+    //     for (var j = 0; j<squareX; j++){
+    //         a.push((GridNav[i][j] == 1 ) ? '=' : '.');
+    //     }
 
-        $.Msg(a.join(''))
-    }*/
+    //     $.Msg(a.join(''))
+    // }
 
     // Debug Prints
     var tab = {"0":0, "1":0, "2":0, "3":0};
@@ -117,7 +118,7 @@ function RegisterGNV(msg){
     {
         tab[arr[i].toString()]++;
     }
-    $.Msg("Free: ",tab["1"]," Blocked: ",tab["2"])
+    // $.Msg("Free: ",tab["1"]," Blocked: ",tab["2"])
 }
 
 // Ask the server for the Terrain grid
@@ -162,6 +163,7 @@ function checkIt(variable, name) {
 function IsBlocked(position) {
     var y = WorldToGridPosX(position[0]) - Root.boundX
     var x = WorldToGridPosY(position[1]) - Root.boundY
+    // $.Msg('x: ', x, 'y: ', y)
 
     //{"BLIGHT":8,"BUILDABLE":2,"GOLDMINE":4,"BLOCKED":1}
     // Check height restriction
@@ -170,24 +172,26 @@ function IsBlocked(position) {
     if (isNotValidHeight) {
         return true
     }
-
+ 
     // Merge grids together into the same value
-    // checkIt(Root.GridNav, 'Root.GridNav')
+    // checkIt(Root.GridNav, 'Root.GridNav')                                                                                              
     var flag = Root.GridNav[x][y]
-    var entGridValue = (entityGrid[x] !== undefined && entityGrid[x][y] !== undefined) ? entityGrid[x][y] : GRID_TYPES["BUILDABLE"]
+    // $.Msg('Root.GridNav: ', Root.GridNav)
+    // var entGridValue = (entityGrid[x] !== undefined && entityGrid[x][y] !== undefined) ? entityGrid[x][y] : GRID_TYPES["BUILDABLE"]
     if (entityGrid[x] && entityGrid[x][y])
         flag = flag | entityGrid[x][y]
 
     // Don't count buildable if its blocked
+    // $.Msg('GRID_TYPES', GRID_TYPES)
     var adjust = (GRID_TYPES["BUILDABLE"] + GRID_TYPES["BLOCKED"])
     if ((flag & adjust)==adjust)
         flag-=GRID_TYPES["BUILDABLE"]
 
-    //$.Msg('GRID:',Root.GridNav[x][y],' ENTGRID:',entGridValue,' FLAG:',flag,' REQUIRES:', requires)
+    // $.Msg('GRID:',Root.GridNav[x][y],' ENTGRID:',entGridValue,' FLAG:',flag,' REQUIRES:', requires)
 
     // If the bits don't match, its invalid
     var bitsDontMatch = (flag & requires) != requires
-    checkIt(bitsDontMatch, 'bitsDontMatch')
+    // checkIt(bitsDontMatch, 'bitsDontMatch')
     if (bitsDontMatch)
         return true
 
