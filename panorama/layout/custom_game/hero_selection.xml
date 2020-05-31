@@ -1,0 +1,65 @@
+<root>
+	<!-- Include stylesheets -->
+	<styles>
+		<include src="file://{resources}/styles/hero_selection.css" />
+	</styles>
+
+	<!-- Include script files -->
+	<scripts>
+		<!-- Libraries -->
+		<include src="file://{resources}/scripts/modular.js" />
+
+		<!-- Panel script -->
+		<include src="file://{resources}/scripts/hero_selection.js" />
+	</scripts>
+
+	<Panel hittest="false" class="MainPanel">
+		<Panel hittest="true" id="PickingScreen">
+
+			<!--Left-hand player section 
+			==================================================================-->
+			<Panel id="LeftPlayers">
+				<!-- JS Inserts player elements here -->
+			</Panel>
+
+			<!-- Middle section 
+			==================================================================-->
+			<Panel class="ClassContainer" >
+				<Panel id="PickTextPanel">
+					<Panel id='PickTimer'>
+						<Label id='TimerTxt' text="" />
+					</Panel>
+					<Label id="HeroSelectText" text="Select a hero" />
+				</Panel>
+
+				<!-- Pick list (showing options) -->
+				<Panel id="PickList">
+					<Label class="BuilderName" text="Ling Builder" />
+					<Panel id="npc_dota_hero_keeper_of_the_light" class="ClassOption" 
+						onactivate="SelectHero('npc_dota_hero_keeper_of_the_light')" 
+						 />
+					<Label class="BuilderName" text="Xoya Builder" />
+					<Panel id="npc_dota_hero_nevermore" class="ClassOption"
+						onactivate="SelectHero('npc_dota_hero_nevermore')" 
+						 />
+					<Label class="BuilderName" text="Coming Soon Builder" />
+					<Panel id="npc_dota_hero_arc_warden" class="ClassOption"
+						onactivate="SelectHero('npc_dota_hero_arc_warden')" 
+						/>
+				</Panel>
+				<!-- Post-pick screen (hero view) -->
+				<Panel id="PostPickScreen">
+					<Button id="EnterGameBtn" class="disabled" onactivate="EnterGame()" >
+						<Label id="EnterGameBtnTxt" text="Waiting for other players..." />
+					</Button>
+				</Panel>
+			</Panel>
+
+			<!-- Right-hand player section 
+			==================================================================-->
+			<Panel id="RightPlayers">
+				<!-- JS Inserts player elements here -->
+			</Panel>
+		</Panel>
+	</Panel>
+</root>
