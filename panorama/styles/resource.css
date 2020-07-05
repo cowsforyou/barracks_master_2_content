@@ -7,11 +7,11 @@
 .ResourcePanelContainer
 {
     background-color: black;
+    box-shadow: 0 0 6px 0 rgba(215, 138, 5, 0.75);
     horizontal-align: right;
     vertical-align: bottom;
     width: 220px;
     height: 145px;
-    box-shadow: 0 0 4px 0 rgba(215, 138, 5, 0.75);
 }
 
 .Hidden 
