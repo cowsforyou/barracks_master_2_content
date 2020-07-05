@@ -63,10 +63,11 @@
 }
 
 .ResourceImage {
-    width: 207px;
-    height: 91px;
+    width: 209px;
+    height: 92px;
     margin-bottom: 5px;
     horizontal-align: center;
     vertical-align: bottom;
+    padding: 1px;
     box-shadow: 0 0 4px 0 rgba(215, 138, 5, 0.75);
 }
