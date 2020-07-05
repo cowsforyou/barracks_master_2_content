@@ -4,6 +4,16 @@
     height: 100%;
 }
 
+.ResourcePanelContainer
+{
+    background-color: black;
+    horizontal-align: right;
+    vertical-align: bottom;
+    width: 220px;
+    height: 145px;
+    box-shadow: 0 0 4px 0 rgba(215, 138, 5, 0.75);
+}
+
 .Hidden 
 { 
     visibility: collapse;
@@ -12,22 +22,25 @@
 
 .ResourceSubPanel {
     width: 100px;
-    height: 40px;
+    height: 33px;
     horizontal-align: right;
-    vertical-align: bottom;
     margin-right: 2px;
+    margin-top: 7px;
+    box-shadow: 0 0 4px 0 rgba(215, 138, 5, 0.75);
 }
 
 .LumberPanel {
-    margin-bottom: 152px;
+    margin-bottom: 105px;
+    margin-right: 5px;
 }
 
 .GoldPanel {
-    margin-bottom: 112px;
+    margin-bottom: 105px;
+    margin-right: 113px;
 }
 
 .ResourceName {
-	color: green;
+	color: white;
     font-size: 20px;
     font-family: Radiance;
   	font-weight: bold;
@@ -37,10 +50,23 @@
     font-family: Radiance;
     margin-left: 38px;
     margin-top: 1px;
+    horizontal-align: center;
+    vertical-align: middle;
 }
 
 .ResourceIcon { 	
 	width:36px; 
 	height:26px; 
-	background-size: 100% 100%;   
+    background-size: 100% 100%;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.ResourceImage {
+    width: 207px;
+    height: 91px;
+    margin-bottom: 5px;
+    horizontal-align: center;
+    vertical-align: bottom;
+    box-shadow: 0 0 4px 0 rgba(215, 138, 5, 0.75);
 }

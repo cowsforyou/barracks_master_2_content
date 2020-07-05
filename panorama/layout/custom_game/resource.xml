@@ -9,6 +9,7 @@
 		$.Msg( "Compiled Panorama Resource!" );
 	</script>
 	<Panel hittest="false" class='ResourcePanel'>
+	<Panel class="ResourcePanelContainer">
 		<Panel id="ResourceLumber"  class="ResourceSubPanel LumberPanel" onmouseover="showToolTip('lumber')" onmouseout="DOTAHideTitleTextTooltip()">
 			<Label id="LumberText" class="ResourceName" text="0" />
 			<Image hittest="false" class="ResourceIcon" src="file://{images}/custom_game/lumber_icon.png" />
@@ -17,5 +18,9 @@
 			<Label id="GoldText" class="ResourceName" text="0" />
 			<Image hittest="false" class="ResourceIcon" src="file://{images}/custom_game/gold_icon.png" />
 		</Panel>
+		<Panel class="ResourceImage">
+			<Image hittest="false"  src="file://{images}/custom_game/panorama_bm_logo_small.png" />
+		</Panel>
+	</Panel>
 	</Panel>
 </root>
