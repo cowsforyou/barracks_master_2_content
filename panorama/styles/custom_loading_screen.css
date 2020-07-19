@@ -3,16 +3,14 @@
 @define IterationCount: 1;
 @define AnimationDelay: 0s;*/
 
-.AddonLoadingRoot
-{
+.AddonLoadingRoot {
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 100% 100%;
   background-image: url(file://{images}/custom_game/loading_screen/background_05.png);
 }
 
-#TitlePanel
-{
+#TitlePanel {
   horizontal-align: left;
   vertical-align: bottom;
   margin-bottom: 150px;
@@ -20,8 +18,7 @@
   flow-children: right;
 }
 
-#AddonTitle
-{
+#AddonTitle {
   margin-bottom: -15px;
   vertical-align: center;
   text-transform: uppercase;
@@ -30,146 +27,188 @@
   text-shadow: 2px 2px 2px #000000;
 }
 
-
-
 /*-------------------------
 Left Panel Backgrounds
 -------------------------*/
-.BM_Left_Backgrounds
-{
-	horizontal-align: left;
-	vertical-align: top;
-	margin-top: 72px;
+.BM_Left_Backgrounds {
+  horizontal-align: left;
+  vertical-align: top;
+  margin-top: 72px;
   margin-left: 21px;
 }
 
-#UpdatesPanel
-{
-	horizontal-align: left;
-	vertical-align: top;
-	width: 430px;
-	height: 380px;
-	opacity: .98;
+#UpdatesPanel {
+  horizontal-align: left;
+  vertical-align: top;
+  width: 430px;
+  height: 380px;
   background-color: black;
   box-shadow: 0 0 8px 0 rgba(215, 138, 5, 0.75);
+  opacity: 0.98;
+  animation-name: fadeInUpdates;
+  animation-duration: 10s;
+  animation-timing-function: ease-in-out;
 }
 
-#LadderPanel
-{
-	width: 250px;
-	height: 680px;
-	margin-left: 449px;
-	opacity: .98;
+#LadderPanel {
+  width: 250px;
+  height: 680px;
+  margin-left: 449px;
+  opacity: 0.98;
   background-color: black;
   box-shadow: 0 0 8px 0 rgba(215, 138, 5, 0.75);
+  animation-name: fadeInLadder;
+  animation-duration: 10s;
+  animation-timing-function: ease-in-out;
 }
 
-#BannerPanel
-{
-	width: 430px;
-	height: 280px;
-	margin-top: 400px;
-	opacity: .98;
+#BannerPanel {
+  width: 430px;
+  height: 280px;
+  margin-top: 400px;
+  opacity: 0.98;
   background-color: black;
+  background-image: url(file://{images}/custom_game/loading_screen/banner.jpg);
+  background-size: 100% 100%;
   box-shadow: 0 0 8px 0 rgba(215, 138, 5, 0.75);
+  animation-name: fadeInBanner;
+  animation-duration: 10s;
+  animation-timing-function: ease-in-out;
 }
 
 /*-------------------------
 Left Panel Items
 -------------------------*/
 
-.BM_Left_Items
-{
-	horizontal-align: left;
-	vertical-align: top;
-	width: 675px;
-	height: 700px;
-	margin-top: 72px;
-	margin-left: 21px;
+.BM_Left_Items {
+  horizontal-align: left;
+  vertical-align: top;
+  width: 675px;
+  height: 700px;
+  margin-top: 72px;
+  margin-left: 21px;
 }
 
-#BM_Updates
-{
-	horizontal-align: left;
-	vertical-align: top;
-	width: 404px;
-	height: 380px;
-	flow-children: down;
+#BM_Updates {
+  horizontal-align: left;
+  vertical-align: top;
+  width: 404px;
+  height: 380px;
+  flow-children: down;
+  animation-name: fadeInUpdates;
+  animation-duration: 10s;
+  animation-timing-function: ease-in-out;
 }
 
-#UpdatesTitle
-{
-	font-size: 30px;
-	font-weight: bold;
-	color: #ffffff;
-	text-shadow: 2px 2px 2px #000000;
-	horizontal-align: left;
-	padding-left: 15px;
-	padding-top: 10px;
+#UpdatesTitle {
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 2px 2px 2px #000000;
+  horizontal-align: left;
+  padding-left: 15px;
+  padding-top: 10px;
 }
 
-#UpdatesText
-{
-	font-size: 15px;
+#UpdatesText {
+  font-size: 15px;
   color: #ffffff;
   padding-top: 10px;
-	padding-left: 15px;
-	padding-right: 15px;	
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 /*-- Ladder Panel --*/
 
-#BM_Ladder
-{
-	width: 250px;
-	height: 680px;
-	margin-left: 449px;
-	flow-children: down;
+#BM_Ladder {
+  width: 250px;
+  height: 680px;
+  margin-left: 449px;
+  flow-children: down;
+  animation-name: fadeInLadder;
+  animation-duration: 10s;
+  animation-timing-function: ease-in-out;
 }
 
-#LadderTitle
-{
-	horizontal-align: left;
-	font-size: 30px;
-	font-weight: bold;
-	color: #ffffff;
-	text-shadow: 2px 2px 2px #000000;
-	padding-left: 15px;
-	padding-top: 10px;
+#LadderTitle {
+  horizontal-align: left;
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 2px 2px 2px #000000;
+  padding-left: 15px;
+  padding-top: 10px;
 }
 
-#LadderPlayerPanel
-{
-	width: 250px;
-	height: 605px;
-	margin-top: 0px;
-	flow-children: down;
+#LadderPlayerPanel {
+  width: 250px;
+  height: 605px;
+  margin-top: 0px;
+  flow-children: down;
 }
 
-
-#LadderText
-{
-	vertical-align: bottom;
-	margin-bottom: 15px;
-	horizontal-align: center;
-	font-size: 16px;
-	color: #ffffff;
+#LadderText {
+  vertical-align: bottom;
+  margin-bottom: 15px;
+  horizontal-align: center;
+  font-size: 16px;
+  color: #ffffff;
 }
 
 /*-- Banner Panel--*/
 
-#BM_Banner
-{
-	width: 430px;
-	height: 280px;
-	margin-top: 400px;
+#BM_Banner {
+  width: 430px;
+  height: 280px;
+  margin-top: 400px;
+  opacity: 1;
+  animation-name: fadeInBanner;
+  animation-duration: 10s;
+  animation-timing-function: ease-in-out;
 }
 
-#Banner01
-{
-	opacity: 1.0;
+/*-- Animation --*/
+@keyframes 'fadeInUpdates' {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 0.98;
+  }
 }
 
+@keyframes 'fadeInBanner' {
+  0% {
+    opacity: 0;
+  }
+
+  52% {
+    opacity: 0;
+  }
+
+  72% {
+    opacity: 0.98;
+  }
+}
+
+@keyframes 'fadeInLadder' {
+  0% {
+    opacity: 0;
+  }
+
+  54% {
+    opacity: 0;
+  }
+
+  74% {
+    opacity: 0.98;
+  }
+}
 /*#CustomBg
 {
 
