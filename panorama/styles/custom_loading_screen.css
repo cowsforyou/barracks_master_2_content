@@ -7,7 +7,7 @@
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 100% 100%;
-  background-image: url(file://{images}/custom_game/loading_screen/background_05.png);
+  background-image: url(file://{images}/custom_game/loading_screen/background_06.png);
 }
 
 #TitlePanel {
@@ -46,7 +46,7 @@ Left Panel Backgrounds
   box-shadow: 0 0 8px 0 rgba(215, 138, 5, 0.75);
   opacity: 0.98;
   animation-name: fadeInUpdates;
-  animation-duration: 10s;
+  animation-duration: 12s;
   animation-timing-function: ease-in-out;
 }
 
@@ -58,7 +58,7 @@ Left Panel Backgrounds
   background-color: black;
   box-shadow: 0 0 8px 0 rgba(215, 138, 5, 0.75);
   animation-name: fadeInLadder;
-  animation-duration: 10s;
+  animation-duration: 12s;
   animation-timing-function: ease-in-out;
 }
 
@@ -72,7 +72,7 @@ Left Panel Backgrounds
   background-size: 100% 100%;
   box-shadow: 0 0 8px 0 rgba(215, 138, 5, 0.75);
   animation-name: fadeInBanner;
-  animation-duration: 10s;
+  animation-duration: 12s;
   animation-timing-function: ease-in-out;
 }
 
@@ -177,7 +177,7 @@ Left Panel Items
     opacity: 0;
   }
 
-  70% {
+  85% {
     opacity: 0.98;
   }
 }
@@ -187,11 +187,11 @@ Left Panel Items
     opacity: 0;
   }
 
-  52% {
+  50% {
     opacity: 0;
   }
 
-  72% {
+  85% {
     opacity: 0.98;
   }
 }
@@ -201,11 +201,11 @@ Left Panel Items
     opacity: 0;
   }
 
-  54% {
+  50% {
     opacity: 0;
   }
 
-  74% {
+  85% {
     opacity: 0.98;
   }
 }
