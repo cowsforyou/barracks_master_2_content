@@ -43,6 +43,8 @@
 
   <Panel>
     <!-- CustomUIElements go here.-->
+    //Custom Hero selection
+    <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/hero_selection.xml" />
 
     //Barebones and Building Helper Elements
     <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/barebones_notifications.xml" /> 
@@ -63,8 +65,6 @@
     //Used to play sounds on client
     <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/sounds.xml" />
 
-    //Custom Hero selection
-    <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/hero_selection.xml" />
     <!-- From Overthrow.
 
         <CustomUIElement type="HudTopBar"           layoutfile="file://{resources}/layout/custom_game/multiteam_top_scoreboard.xml" />

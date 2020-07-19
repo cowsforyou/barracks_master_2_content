@@ -98,6 +98,24 @@ function SelectHero( heroName ) {
 	GameEvents.SendCustomGameEventToServer( "hero_selected", { HeroName: heroName } );
 }
 
+function PreviewLingHero () {
+	$('#PickList').style.visibility = 'collapse';
+	$('#PreviewLingHeroScreen').style.visibility = 'visible';
+	$('#PreviewXoyaHeroScreen').style.visibility = 'collapse';
+}
+
+function PreviewXoyaHero () {
+	$('#PickList').style.visibility = 'collapse';
+	$('#PreviewXoyaHeroScreen').style.visibility = 'visible';
+	$('#PreviewLingHeroScreen').style.visibility = 'collapse';
+}
+
+function BackToList () {
+	$('#PreviewLingHeroScreen').style.visibility = 'collapse';
+	$('#PreviewXoyaHeroScreen').style.visibility = 'collapse';
+	$('#PickList').style.visibility = 'visible';
+}
+
 /* Enter the game by removing the picking screen, called when the player
  * clicks a button in the layout. */
 function EnterGame() {
@@ -105,6 +123,15 @@ function EnterGame() {
 		$('#PickingScreen').DeleteAsync( 0.0 );
 		var scoreBoardScreen = $.GetContextPanel().GetParent().GetParent().FindChildTraverse('CustomUIContainer_FlyoutScoreboard');
 		scoreBoardScreen.style.opacity = 1;
+
+		var Hud = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse('HUDElements');
+		Hud.style.visibility = 'visible';
+
+		var resourcePanelScreen = $.GetContextPanel().GetParent().FindChildTraverse('ResourceLumber').GetParent();
+		resourcePanelScreen.style.opacity = 1;
+
+		var resourcePanelScreen = $.GetContextPanel().GetParent().FindChildTraverse('ResourceLumber').GetParent();
+		resourcePanelScreen.style.opacity = 1;
 	}
 }
 
@@ -114,8 +141,18 @@ function EnterGame() {
 	//Set panel visibility
 	$('#PickList').style.visibility = 'visible';
 	$('#PostPickScreen').style.visibility = 'collapse';
+	
+	//Hide scoreboard screen
 	var scoreBoardScreen = $.GetContextPanel().GetParent().GetParent().FindChildTraverse('CustomUIContainer_FlyoutScoreboard');
 	scoreBoardScreen.style.opacity = 0;
+
+	//Hide resource panel
+	var resourcePanelScreen = $.GetContextPanel().GetParent().FindChildTraverse('ResourceLumber').GetParent();
+	resourcePanelScreen.style.opacity = 0;
+
+	//Hide HUD elements
+	var Hud = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse('HUDElements');
+	Hud.style.visibility = 'collapse';
 
 	///Load player elements
 	LoadPlayers();
