@@ -132,6 +132,9 @@ function EnterGame() {
 
 		var resourcePanelScreen = $.GetContextPanel().GetParent().FindChildTraverse('ResourceLumber').GetParent();
 		resourcePanelScreen.style.opacity = 1;
+
+		var PauseInfo = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse('PausedInfo');
+		PauseInfo.style.opacity = 1;
 	}
 }
 
@@ -153,6 +156,10 @@ function EnterGame() {
 	//Hide HUD elements
 	var Hud = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse('HUDElements');
 	Hud.style.visibility = 'collapse';
+
+	//Hide Pause Game element
+	var PauseInfo = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse('PausedInfo');
+	PauseInfo.style.opacity = 0;
 
 	///Load player elements
 	LoadPlayers();
