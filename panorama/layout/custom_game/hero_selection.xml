@@ -29,36 +29,17 @@
 				</Panel>
 				<!-- Pick list (showing options) -->
 				<Panel id="PickList">
-					<Label class="BuilderName" text="Ling" />
-					<Panel id="npc_dota_hero_keeper_of_the_light" class="ClassOption" onactivate="SelectHero('npc_dota_hero_keeper_of_the_light')" />
-					<Button class="PreviewHeroBtn" id="PreviewLingHeroBtn" onactivate="PreviewLingHero()">
-						<Label text="More info" />
-					</Button>
-					<Label class="BuilderName" text="Xoya" />
-					<Panel id="npc_dota_hero_nevermore" class="ClassOption" onactivate="SelectHero('npc_dota_hero_nevermore')" />
-					<Button class="PreviewHeroBtn" id="PreviewXoyaHeroBtn" onactivate="PreviewXoyaHero()">
-						<Label text="More info" />
-					</Button>
+					<Panel class="Builder">
+						<Panel id="npc_dota_hero_keeper_of_the_light" class="ClassOption" onactivate="SelectHero('npc_dota_hero_keeper_of_the_light')" />
+						<Label class="BuilderInfo" text="#bm_lore_ling" />
+					</Panel>
+					<Panel class="Builder">
+						<Panel id="npc_dota_hero_nevermore" class="ClassOption" onactivate="SelectHero('npc_dota_hero_nevermore')" />
+						<Label class="BuilderInfo" text="#bm_lore_xoo" />
+					</Panel>
 					<!-- <Label class="BuilderName" text="Coming Soon Builder" />
 					<Panel id="npc_dota_hero_arc_warden" class="ClassOption" onactivate="SelectHero('npc_dota_hero_arc_warden')" /> -->
 				</Panel>
-
-				<!-- Preview hero screen -->
-				<Panel class="PreviewHeroScreen" id="PreviewLingHeroScreen">
-					<Label class="PreviewHeroText" text="#bm_lore_ling" />
-					<Button class="BackBtn" onactivate="BackToList()">
-						<Label text="Back" />
-					</Button>
-				</Panel>
-
-				<!-- Preview hero screen -->
-				<Panel class="PreviewHeroScreen" id="PreviewXoyaHeroScreen">
-					<Label class="PreviewHeroText" text="#bm_lore_xoo" />
-					<Button class="BackBtn" onactivate="BackToList()">
-						<Label text="Back" />
-					</Button>
-				</Panel>
-
 				<!-- Post-pick screen (hero view) -->
 				<Panel id="PostPickScreen">
 					<Button id="EnterGameBtn" class="disabled" onactivate="EnterGame()">

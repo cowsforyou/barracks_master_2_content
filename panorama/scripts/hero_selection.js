@@ -98,24 +98,6 @@ function SelectHero( heroName ) {
 	GameEvents.SendCustomGameEventToServer( "hero_selected", { HeroName: heroName } );
 }
 
-function PreviewLingHero () {
-	$('#PickList').style.visibility = 'collapse';
-	$('#PreviewLingHeroScreen').style.visibility = 'visible';
-	$('#PreviewXoyaHeroScreen').style.visibility = 'collapse';
-}
-
-function PreviewXoyaHero () {
-	$('#PickList').style.visibility = 'collapse';
-	$('#PreviewXoyaHeroScreen').style.visibility = 'visible';
-	$('#PreviewLingHeroScreen').style.visibility = 'collapse';
-}
-
-function BackToList () {
-	$('#PreviewLingHeroScreen').style.visibility = 'collapse';
-	$('#PreviewXoyaHeroScreen').style.visibility = 'collapse';
-	$('#PickList').style.visibility = 'visible';
-}
-
 /* Enter the game by removing the picking screen, called when the player
  * clicks a button in the layout. */
 function EnterGame() {
