@@ -98,24 +98,6 @@ function SelectHero( heroName ) {
 	GameEvents.SendCustomGameEventToServer( "hero_selected", { HeroName: heroName } );
 }
 
-function PreviewLingHero () {
-	$('#PickList').style.visibility = 'collapse';
-	$('#PreviewLingHeroScreen').style.visibility = 'visible';
-	$('#PreviewXoyaHeroScreen').style.visibility = 'collapse';
-}
-
-function PreviewXoyaHero () {
-	$('#PickList').style.visibility = 'collapse';
-	$('#PreviewXoyaHeroScreen').style.visibility = 'visible';
-	$('#PreviewLingHeroScreen').style.visibility = 'collapse';
-}
-
-function BackToList () {
-	$('#PreviewLingHeroScreen').style.visibility = 'collapse';
-	$('#PreviewXoyaHeroScreen').style.visibility = 'collapse';
-	$('#PickList').style.visibility = 'visible';
-}
-
 /* Enter the game by removing the picking screen, called when the player
  * clicks a button in the layout. */
 function EnterGame() {
@@ -132,6 +114,9 @@ function EnterGame() {
 
 		var resourcePanelScreen = $.GetContextPanel().GetParent().FindChildTraverse('ResourceLumber').GetParent();
 		resourcePanelScreen.style.opacity = 1;
+
+		var PauseInfo = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse('PausedInfo');
+		PauseInfo.style.opacity = 1;
 	}
 }
 
@@ -153,6 +138,10 @@ function EnterGame() {
 	//Hide HUD elements
 	var Hud = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse('HUDElements');
 	Hud.style.visibility = 'collapse';
+
+	//Hide Pause Game element
+	var PauseInfo = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse('PausedInfo');
+	PauseInfo.style.opacity = 0;
 
 	///Load player elements
 	LoadPlayers();
