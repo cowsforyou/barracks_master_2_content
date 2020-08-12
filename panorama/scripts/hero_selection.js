@@ -120,6 +120,10 @@ function EnterGame() {
 	}
 }
 
+function SelectColor(color) {
+	GameEvents.SendCustomGameEventToServer( "set_player_color", { "color" : color } );
+}
+
 /* Initialisation - runs when the element is created
 =========================================================================*/
 (function () {

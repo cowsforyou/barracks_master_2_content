@@ -45,6 +45,15 @@
 					<Button id="EnterGameBtn" class="disabled" onactivate="EnterGame()">
 						<Label id="EnterGameBtnTxt" text="Waiting for other players..." />
 					</Button>
+					<Button class="BackBtn disabled" onactivate="SelectColor('purple')">
+						<Label text="Select Purple" />
+					</Button>
+					<Button class="BackBtn disabled" onactivate="SelectColor('black')">
+						<Label text="Select Black" />
+					</Button>
+					<Button class="BackBtn disabled" onactivate="SelectColor('white')">
+						<Label text="Select White" />
+					</Button>
 				</Panel>
 			</Panel>
 			<!-- Right-hand player section ==================================================================-->
