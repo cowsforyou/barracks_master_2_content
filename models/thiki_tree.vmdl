@@ -1,6 +1,5 @@
 <!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 {
-	_class = "CVModel"
 	m_meshList = 
 	{
 		m_meshList = 
@@ -12,10 +11,12 @@
 				m_bSkinParentedObjects = true
 				m_bLegacySkinParentedTransforms = false
 				m_bExpensiveTangents = false
-				m_bExpensiveVertices = false
 				m_bHighPrecisionTexCoords = false
+				m_bPerVertexCurvature = false
+				m_bBentNormals = false
 				m_bIgnoreCloth = false
 				m_bGetSkinningFromLod0 = false
+				m_bPreferHighDensityTrianglesInUvDensityCalculation = false
 				m_pMorphInfo = null
 			},
 		]
@@ -29,9 +30,9 @@
 		m_bRemoveUnusedBonesEnabled = false
 		m_bDriveMeshesWithBacksolvedJointsOnly = true
 		m_flMatchProxiesToMeshes = 1.0
-		m_flReservedFloat = 0.0
+		m_flFallbackEnvelope = 1.0
 		m_nReservedInt = 0
-		m_bReservedBool1 = false
+		m_bSoftSkinAnimation = false
 		m_bReservedBool2 = false
 		m_bReservedBool3 = false
 		m_bReservedBool4 = false
@@ -39,18 +40,31 @@
 	}
 	m_physicsMeshList = 
 	{
-		m_meshList = [  ]
+		m_meshList = 
+		[
+			{
+				m_meshName = "thiki_tree"
+				m_meshFile = "models/thiki_tree.dmx"
+				m_bOneConvexPiece = true
+				m_flMaxError = 0.0
+				m_bUseExactGeometry = false
+				m_bAutoMass = true
+				m_flMassOverride = 100.0
+				m_bConcavePerJoint = false
+				m_bSelfCollisions = false
+				m_bForceKinematic = false
+				m_bIgnoreSkeleton = false
+			},
+		]
 	}
 	m_pModelInfo = null
 	m_pBoneFlagList = 
 	{
-		_class = "CVBoneFlagListReference"
 		m_pObject = null
 	}
 	m_pHitBoxSetLists = 
 	[
 		{
-			_class = "CVhitBoxSetListReference"
 			m_pObject = 
 			{
 				m_HitBoxSets = 
@@ -60,12 +74,14 @@
 						m_HitBoxes = 
 						[
 							{
-								m_name = "Cube"
+								m_name = "cube2"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
-								m_sBoneName = "Cube"
-								m_vMinBounds = [ -89.04586, -83.454292, -260.383575 ]
-								m_vMaxBounds = [ 89.04586, 83.454292, 260.383575 ]
+								m_sBoneName = "cube"
+								m_vMinBounds = [ -55.097355, 0.0, -64.822784 ]
+								m_vMaxBounds = [ 54.843174, 285.637878, 63.989841 ]
+								m_flShapeRadius = 0.0
+								m_nShapeType = "VHITBOX_SHAPE_BOX"
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -79,34 +95,26 @@
 	m_pAttachmentLists = [  ]
 	m_pAnimGroup = 
 	{
-		_class = "CVanimGroupReference"
 		m_pObject = 
 		{
 			m_Name = ""
-			m_pReferenceSkeleton = 
-			{
-				_class = "CVReferenceSkeletonReference"
-				m_pObject = null
-			}
 			m_pBoneFlagList = 
 			{
-				_class = "CVBoneFlagListReference"
 				m_pObject = null
 			}
 			m_pSeqGroup = 
 			{
-				_class = "CVseqGroupReference"
 				m_pObject = null
 			}
 			m_pAnimGroups = [  ]
 			m_Vanim = 
 			[
 				{
-					m_Animationname = "Cube"
-					m_Filepath = "models/Cube.dmx"
+					m_Animationname = "cube2"
+					m_Filepath = "models/cube2.fbx"
 					m_nStartframe = 0
-					m_nEndframe = 0
-					m_flFps = 30.0
+					m_nEndframe = 23
+					m_flFps = 24.0
 					m_Loop = 
 					{
 						m_bLoop = false
@@ -144,31 +152,31 @@
 			]
 			m_sScripts = [  ]
 			m_folderNames = [  ]
+			m_sCompileScripts = [  ]
+			m_pActivityWhiteList = 
+			{
+				m_pObject = null
+			}
 		}
 	}
 	m_pMaterialGroupList = 
 	{
-		_class = "CVNodeMaterialGroupListReference"
 		m_pObject = null
 	}
 	m_pMeshGroupList = 
 	{
-		_class = "CVMeshGroupListReference"
 		m_pObject = null
 	}
 	m_pLodGroupList = 
 	{
-		_class = "CVLODGroupListReference"
 		m_pObject = null
 	}
 	m_pPropBreakableList = 
 	{
-		_class = "CVpropBreakableListReference"
 		m_pObject = null
 	}
 	m_pPropDataList = 
 	{
-		_class = "CVpropDataListReference"
 		m_pObject = null
 	}
 	m_pConstraintLists = [  ]
@@ -182,6 +190,7 @@
 	m_flFbxScale = 1.0
 	m_flQCScale = 1.0
 	m_vOrigin = [ 0.0, 0.0, 0.0 ]
+	m_bEmbedAnimsInAnimGroup = false
 	m_pPsfList = null
 	m_keyValueText = ""
 	m_bStaticProp = false
@@ -193,5 +202,6 @@
 	m_bMakeUniqueVMeshes = false
 	m_bMakeImplicitBindPoseSequence = false
 	m_bAdjustSkeletonFromBoneFlags = false
+	m_bHiddenAssetFlag = false
 	m_pAnimGroups = [  ]
 }
