@@ -117,6 +117,8 @@ function EnterGame() {
 
 		var PauseInfo = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse('PausedInfo');
 		PauseInfo.style.opacity = 1;
+
+		GameEvents.SendCustomGameEventToServer( "set_player_color_unselected", {});
 	}
 }
 

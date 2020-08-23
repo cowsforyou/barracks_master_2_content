@@ -51,8 +51,17 @@
 					<Button class="BackBtn disabled" onactivate="SelectColor('black')">
 						<Label text="Select Black" />
 					</Button>
-					<Button class="BackBtn disabled" onactivate="SelectColor('white')">
-						<Label text="Select White" />
+					<Button class="BackBtn disabled" onactivate="SelectColor('silver')">
+						<Label text="Select Silver" />
+					</Button>
+					<Button class="BackBtn disabled" onactivate="SelectColor('red')">
+						<Label text="Select Red" />
+					</Button>
+					<Button class="BackBtn disabled" onactivate="SelectColor('cyan')">
+						<Label text="Select Cyan" />
+					</Button>
+					<Button class="BackBtn disabled" onactivate="SelectColor('lime')">
+						<Label text="Select Lime" />
 					</Button>
 				</Panel>
 			</Panel>
