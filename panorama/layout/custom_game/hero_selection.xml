@@ -13,7 +13,7 @@
 		<include src="file://{resources}/scripts/hero_selection.js" />
 	</scripts>
 
-	<Panel hittest="true" class="MainPanel">
+	<Panel hittest="true" class="MainHeroSelectionPanel">
 		<!-- Status Container -->
 		<Panel id="StatusContainer" class="StatusContainer">
 			<Panel id="Status">

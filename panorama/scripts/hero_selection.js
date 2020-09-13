@@ -26,8 +26,6 @@ const resourcePanelScreen = $.GetContextPanel()
   .GetParent()
   .FindChildTraverse("ResourceLumber")
   .GetParent();
-const inspectButton =  HudMain.FindChildTraverse('InspectButton');
-const heroViewButton = HudMain.FindChildTraverse('HeroViewButton');
 
 //Subscribe to events
 GameEvents.Subscribe("picking_done", OnPickingDone);
@@ -136,15 +134,15 @@ function SwitchToHeroPreview(heroName) {
 
   if (heroName === "npc_dota_hero_keeper_of_the_light") {
     factionNamePreview = "Ling";
-    factionDescriptionHash="#bm_lore_ling";
+    factionDescriptionHash = "#bm_lore_ling";
     selectedHero = "npc_dota_hero_keeper_of_the_light";
   } else if (heroName === "npc_dota_hero_nevermore") {
     factionNamePreview = "Xoya";
-    factionDescriptionHash="#bm_lore_xoo";
+    factionDescriptionHash = "#bm_lore_xoo";
     selectedHero = "npc_dota_hero_nevermore";
   } else {
     factionNamePreview = "Random";
-    factionDescriptionHash="#bm_lore_random";
+    factionDescriptionHash = "#bm_lore_random";
     const random = Math.round(Math.random());
 
     if (random === 1) {
@@ -155,7 +153,7 @@ function SwitchToHeroPreview(heroName) {
   }
 
   textPanel.BLoadLayoutFromString(
-    '<root><Label text="' + factionDescriptionHash +'" /></root>',
+    '<root><Label text="' + factionDescriptionHash + '" /></root>',
     false,
     false
   );
@@ -194,6 +192,14 @@ function SelectHero() {
 /* Enter the game by removing the picking screen, called when the player
  * clicks a button in the layout. */
 function EnterGame() {
+  //Hide Hero Selection Panel
+  const mainHeroSelectionPanel = $.GetContextPanel()
+    .FindChildTraverse("GameInfoContainer")
+    .GetParent();
+  mainHeroSelectionPanel.style.width = 0;
+  mainHeroSelectionPanel.style.height = 0;
+
+  //Delete Hero Selection Panel Containers for optimization
   $.GetContextPanel().FindChildTraverse("SelectionContainer").DeleteAsync(0.0);
   $.GetContextPanel().FindChildTraverse("StatusContainer").DeleteAsync(0.0);
   $.GetContextPanel().FindChildTraverse("GameInfoContainer").DeleteAsync(0.0);
@@ -207,10 +213,6 @@ function EnterGame() {
   //Show HUD elements
   Hud.style.opacity = 1;
 
-  //Show Hero/Building Preview Buttons
-  inspectButton.style.opacity = 1;
-  heroViewButton.style.opacity = 1;
-  
   //Show Timer
   Timer.style.opacity = 1;
 
