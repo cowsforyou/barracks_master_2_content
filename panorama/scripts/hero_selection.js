@@ -134,15 +134,15 @@ function SwitchToHeroPreview(heroName) {
 
   if (heroName === "npc_dota_hero_keeper_of_the_light") {
     factionNamePreview = "Ling";
-    factionDescriptionHash = "#bm_lore_ling";
+    factionDescriptionHash = "#bm_ling_lore";
     selectedHero = "npc_dota_hero_keeper_of_the_light";
   } else if (heroName === "npc_dota_hero_nevermore") {
     factionNamePreview = "Xoya";
-    factionDescriptionHash = "#bm_lore_xoo";
+    factionDescriptionHash = "#bm_xoo_lore";
     selectedHero = "npc_dota_hero_nevermore";
   } else {
     factionNamePreview = "Random";
-    factionDescriptionHash = "#bm_lore_random";
+    factionDescriptionHash = "#bm_random_lore";
     const random = Math.round(Math.random());
 
     if (random === 1) {
