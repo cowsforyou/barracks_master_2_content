@@ -58,9 +58,9 @@
   height: 26%;
   horizontal-align: left;
   background-color: #151515bb;
-  flow-children: down;
+  flow-children: right;
   color: #ffffff;
-  padding: 2% 5%;
+  padding: 2%;
   vertical-align: top;
   margin: 1%;
 }

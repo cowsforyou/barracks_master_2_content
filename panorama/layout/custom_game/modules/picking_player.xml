@@ -35,14 +35,34 @@
 			//Set the hero of the player, then set the transform to none,
 			//which animates the hero portrait panel
 			SetHero : function( heroName ) {
-				$('#HeroPanel').style.backgroundImage = 'url("s2r://panorama/images/heroes/'+ heroName +'_png.vtex")';
-				$('#HeroPanel').style.transform = 'none';
+				$('#HeroPanelFaction').text = heroName;
+			},
+
+			//Set the color of the players team
+			SetColor : function( color ) {
+				$('#HeroPanelColor').text = color.charAt(0).toUpperCase() + color.slice(1);
+			},
+
+			//Set the color of the players team
+			SetTeam : function( team ) {
+				$('#HeroPanelTeam').text = team;
+			},
+
+			//Set the color of the players team
+			SetStatus : function( status ) {
+				$('#HeroPanelStatus').text = status;
 			}
 		});
 	</script>
 
 	<Panel class="PickingPlayer">
 		<DOTAAvatarImage id="PlayerAvatar" class="AvatarImg" />
+		<Label text="Xiao Bird" />
+		<Label text="Calibrating" />
+		<Label id='HeroPanelColor' text='?' />
+		<Label id='HeroPanelFaction' text='?' />
+		<Label id='HeroPanelTeam' text='?'/>
+		<Label id='HeroPanelStatus' text='Waiting' />
 		<Panel id="HeroPanel" />
 	</Panel>
 </root>

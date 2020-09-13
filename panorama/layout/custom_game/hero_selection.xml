@@ -16,9 +16,7 @@
 	<Panel hittest="true" class="MainHeroSelectionPanel">
 		<!-- Status Container -->
 		<Panel id="StatusContainer" class="StatusContainer">
-			<Panel id="Status">
-				<Label text="Status to be built here" />
-			</Panel>
+			<Panel id="Status" />
 		</Panel>
 
 		<!-- Selection Container -->

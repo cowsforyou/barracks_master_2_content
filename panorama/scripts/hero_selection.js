@@ -31,6 +31,8 @@ const resourcePanelScreen = $.GetContextPanel()
 GameEvents.Subscribe("picking_done", OnPickingDone);
 GameEvents.Subscribe("picking_time_update", OnTimeUpdate);
 GameEvents.Subscribe("picking_player_pick", OnPlayerPicked);
+GameEvents.Subscribe("hero_preview_pick", onPlayerPreviewed);
+GameEvents.Subscribe("player_color_preview_pick", onPlayerColorSelect);
 
 /* Event Handlers
 =========================================================================*/
@@ -68,6 +70,20 @@ function OnPlayerPicked(data) {
   PlayerPicked(data.PlayerID, data.HeroName);
 }
 
+/* A player has previewed a hero, update the status screen. */
+function onPlayerPreviewed(data) {
+  //Update the player panel with latest hero
+  playerPanels[data.PlayerID] &&
+    playerPanels[data.PlayerID].SetHero(data.HeroName);
+}
+
+/* A player has previewed a hero, update the status screen. */
+function onPlayerColorSelect(data) {
+  //Update the player panel with latest selected color
+  playerPanels[data.PlayerID] &&
+    playerPanels[data.PlayerID].SetColor(data.Color);
+}
+
 /* Functionality
 =========================================================================*/
 
@@ -79,19 +95,19 @@ function LoadPlayers() {
 
   //Assign radiant players
   $.Each(radiantPlayers, function (player) {
-    $.Msg("test", player);
-    var playerPanel = Modular.Spawn("picking_player", $("#LeftPlayers"));
+    var playerPanel = Modular.Spawn("picking_player", $("#StatusContainer"));
     playerPanel.SetPlayer(player);
-
+    playerPanel.SetTeam('Team 1');
+    
     //Save the panel for later
     playerPanels[player] = playerPanel;
   });
 
   //Assign dire players
   $.Each(direPlayers, function (player) {
-    var playerPanel = Modular.Spawn("picking_player", $("#RightPlayers"));
+    var playerPanel = Modular.Spawn("picking_player", $("#StatusContainer"));
     playerPanel.SetPlayer(player);
-    playerPanel.SetIsRight(true);
+    playerPanel.SetTeam('Team 2');
 
     //Save the panel for later
     playerPanels[player] = playerPanel;
@@ -100,16 +116,8 @@ function LoadPlayers() {
 
 /* A player has picked a hero, update the status screen. */
 function PlayerPicked(player, hero) {
-  //Update the player panel
-  playerPanels[player].SetHero(hero);
-
-  //Disable the hero button
-  $("#" + hero).AddClass("taken");
-
-  //Check if the pick was by the local player
-  if (player == Players.GetLocalPlayer()) {
-    SwitchToHeroPreview(hero);
-  }
+  //Update the player panel status
+  playerPanels[player].SetStatus('Ready');
 }
 
 /* Show the picked hero animation. */
@@ -167,7 +175,12 @@ function SwitchToHeroPreview(heroName) {
     false
   );
   $("#FactionSelector").MoveChildAfter(previewPanel, $("#FactionIcon"));
-  $("#CustomisationSelector").MoveChildAfter(textPanel);
+  $("#CustomisationSelector").MoveChildAfter(textPanel, $("#CustomiseTitle"));
+
+  //Send the hero preview to the server
+  GameEvents.SendCustomGameEventToServer("hero_preview", {
+    HeroName: factionNamePreview,
+  });
 }
 
 /* Select a hero, called when a player clicks a hero panel in the layout */
@@ -232,6 +245,11 @@ function EnterGame() {
 }
 
 function SelectColor(color) {
+  //Send the hero preview to the server
+  GameEvents.SendCustomGameEventToServer("set_player_color_preview", {
+    Color: color,
+  });
+
   GameEvents.SendCustomGameEventToServer("set_player_color", { color: color });
 }
 
