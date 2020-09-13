@@ -26,6 +26,8 @@ const resourcePanelScreen = $.GetContextPanel()
   .GetParent()
   .FindChildTraverse("ResourceLumber")
   .GetParent();
+const inspectButton =  HudMain.FindChildTraverse('InspectButton');
+const heroViewButton = HudMain.FindChildTraverse('HeroViewButton');
 
 //Subscribe to events
 GameEvents.Subscribe("picking_done", OnPickingDone);
@@ -205,6 +207,10 @@ function EnterGame() {
   //Show HUD elements
   Hud.style.opacity = 1;
 
+  //Show Hero/Building Preview Buttons
+  inspectButton.style.opacity = 1;
+  heroViewButton.style.opacity = 1;
+  
   //Show Timer
   Timer.style.opacity = 1;
 
