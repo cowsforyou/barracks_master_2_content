@@ -13,61 +13,53 @@
 		<include src="file://{resources}/scripts/hero_selection.js" />
 	</scripts>
 
-	<Panel hittest="false" class="MainPanel">
-		<Panel hittest="true" id="PickingScreen">
-			<!--Left-hand player section ==================================================================-->
-			<Panel id="LeftPlayers">
-				<!-- JS Inserts player elements here -->
+	<Panel hittest="true" class="MainPanel">
+		<!-- Status Container -->
+		<Panel id="StatusContainer" class="StatusContainer">
+			<Panel id="Status">
+				<Label text="Status to be built here" />
 			</Panel>
-			<!-- Middle section ==================================================================-->
-			<Panel class="ClassContainer">
+		</Panel>
+
+		<!-- Selection Container -->
+		<Panel id="SelectionContainer" class="SelectionContainer">
+			<Panel class="ColorSelector">
+				<Label class="SelectionTitle" text="Color" />
+				<Button id="SelectColorSilver" class="SelectColorButton" onactivate="SelectColor('silver')" />
+				<Button id="SelectColorBlack" class="SelectColorButton" onactivate="SelectColor('black')" />
+				<Button id="SelectColorRed" class="SelectColorButton" onactivate="SelectColor('red')" />
+				<Button id="SelectColorCyan" class="SelectColorButton" onactivate="SelectColor('cyan')" />
+			</Panel>
+			<Panel id="FactionSelector">
+				<Panel id="FactionIcon">
+					<Button id="SelectRandomFaction" class="PreviewFactionButton" onactivate="SwitchToHeroPreview('npc_dota_hero_error')" />
+					<Button id="SelectLingFaction" class="PreviewFactionButton" onactivate="SwitchToHeroPreview('npc_dota_hero_keeper_of_the_light')" />
+					<Button id="SelectXoyaFaction" class="PreviewFactionButton" onactivate="SwitchToHeroPreview('npc_dota_hero_nevermore')" />
+				</Panel>
+				<DOTAScenePanel id="HeroPreview" particleonly="false" class="RandomFactionPreview" unit="random" />
+				<Label style="horizontal-align: center; vertical-align: center; margin-top: 20px;" text="Random" />
+			</Panel>
+			<Panel id="CustomisationSelector">
+				<Label id="CustomiseTitle" class="SelectionTitle" text="Customise" />
+			</Panel>
+		</Panel>
+
+		<!-- Game Info Container -->
+		<Panel id="GameInfoContainer" class="GameInfoContainer">
+			<Panel id="Map" />
+			<Panel class="MapInfoContainer">
+				<Label class="MapInfoContainer" text="BM2 Legacy" />
+				<Label class="MapInfoContainer" text="2 v 2" />
+			</Panel>
+			<Panel class="StartGameContainer">
 				<Panel id="PickTextPanel">
 					<Panel id='PickTimer'>
 						<Label id='TimerTxt' text="" />
 					</Panel>
-					<Label id="HeroSelectText" text="Choose your Builder" />
 				</Panel>
-				<!-- Pick list (showing options) -->
-				<Panel id="PickList">
-					<Panel class="Builder">
-						<Panel id="npc_dota_hero_keeper_of_the_light" class="ClassOption" onactivate="SelectHero('npc_dota_hero_keeper_of_the_light')" />
-						<Label class="BuilderInfo" text="#bm_lore_ling" />
-					</Panel>
-					<Panel class="Builder">
-						<Panel id="npc_dota_hero_nevermore" class="ClassOption" onactivate="SelectHero('npc_dota_hero_nevermore')" />
-						<Label class="BuilderInfo" text="#bm_lore_xoo" />
-					</Panel>
-					<!-- <Label class="BuilderName" text="Coming Soon Builder" />
-					<Panel id="npc_dota_hero_arc_warden" class="ClassOption" onactivate="SelectHero('npc_dota_hero_arc_warden')" /> -->
-				</Panel>
-				<!-- Post-pick screen (hero view) -->
-				<Panel id="PostPickScreen">
-					<Button id="EnterGameBtn" class="disabled" onactivate="EnterGame()">
-						<Label id="EnterGameBtnTxt" text="Waiting for other players..." />
-					</Button>
-					<Button class="BackBtn disabled" onactivate="SelectColor('purple')">
-						<Label text="Select Purple" />
-					</Button>
-					<Button class="BackBtn disabled" onactivate="SelectColor('black')">
-						<Label text="Select Black" />
-					</Button>
-					<Button class="BackBtn disabled" onactivate="SelectColor('silver')">
-						<Label text="Select Silver" />
-					</Button>
-					<Button class="BackBtn disabled" onactivate="SelectColor('red')">
-						<Label text="Select Red" />
-					</Button>
-					<Button class="BackBtn disabled" onactivate="SelectColor('cyan')">
-						<Label text="Select Cyan" />
-					</Button>
-					<Button class="BackBtn disabled" onactivate="SelectColor('lime')">
-						<Label text="Select Lime" />
-					</Button>
-				</Panel>
-			</Panel>
-			<!-- Right-hand player section ==================================================================-->
-			<Panel id="RightPlayers">
-				<!-- JS Inserts player elements here -->
+				<Button id="ReadyBtn" onactivate="SelectHero()">
+					<Label id="ReadyBtnTxt" text="Ready" />
+				</Button>
 			</Panel>
 		</Panel>
 	</Panel>
