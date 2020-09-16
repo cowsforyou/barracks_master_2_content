@@ -9,6 +9,7 @@
 var playerPanels = {};
 let selectedHero = "";
 let clickedReady = false;
+let selectedColor = "";
 
 //Panels
 const HudMain = $.GetContextPanel().GetParent().GetParent().GetParent();
@@ -40,29 +41,28 @@ GameEvents.Subscribe("player_color_preview_pick", onPlayerColorSelect);
 /* Picking phase is done, allow the player to enter the game */
 function OnPickingDone(data) {
   $.Msg("Picking Done");
-
-  if (selectedHero.length === 0) {
-    const random = Math.round(Math.random());
-    if (random === 1) {
-      selectedHero = "npc_dota_hero_keeper_of_the_light";
-    } else {
-      selectedHero = "npc_dota_hero_nevermore";
-    }
-    SelectHero();
-  }
-
-  if (!clickedReady) {
-    GameEvents.SendCustomGameEventToServer("hero_selected", {
-      HeroName: selectedHero,
-    });
-  }
-
   EnterGame();
 }
 
 /* Visual timer update */
 function OnTimeUpdate(data) {
   $("#TimerTxt").text = data.time;
+
+  if (data.time === 1) {
+    if (selectedHero.length === 0) {
+      const random = Math.round(Math.random());
+      if (random === 1) {
+        selectedHero = "npc_dota_hero_keeper_of_the_light";
+      } else {
+        selectedHero = "npc_dota_hero_nevermore";
+      }
+      SelectHero();
+    }
+
+    if (!clickedReady) {
+      SelectHero();
+    }
+  }
 }
 
 /* A player has picked a hero */
@@ -77,7 +77,7 @@ function onPlayerPreviewed(data) {
     playerPanels[data.PlayerID].SetHero(data.HeroName);
 }
 
-/* A player has previewed a hero, update the status screen. */
+/* A player has previewed a color, update the status screen. */
 function onPlayerColorSelect(data) {
   //Update the player panel with latest selected color
   playerPanels[data.PlayerID] &&
@@ -97,8 +97,8 @@ function LoadPlayers() {
   $.Each(radiantPlayers, function (player) {
     var playerPanel = Modular.Spawn("picking_player", $("#StatusContainer"));
     playerPanel.SetPlayer(player);
-    playerPanel.SetTeam('Team 1');
-    
+    playerPanel.SetTeam("Team 1");
+
     //Save the panel for later
     playerPanels[player] = playerPanel;
   });
@@ -107,7 +107,7 @@ function LoadPlayers() {
   $.Each(direPlayers, function (player) {
     var playerPanel = Modular.Spawn("picking_player", $("#StatusContainer"));
     playerPanel.SetPlayer(player);
-    playerPanel.SetTeam('Team 2');
+    playerPanel.SetTeam("Team 2");
 
     //Save the panel for later
     playerPanels[player] = playerPanel;
@@ -117,7 +117,7 @@ function LoadPlayers() {
 /* A player has picked a hero, update the status screen. */
 function PlayerPicked(player, hero) {
   //Update the player panel status
-  playerPanels[player].SetStatus('Ready');
+  playerPanels[player].SetStatus("Ready");
 }
 
 /* Show the picked hero animation. */
@@ -183,7 +183,7 @@ function SwitchToHeroPreview(heroName) {
   });
 }
 
-/* Select a hero, called when a player clicks a hero panel in the layout */
+/* Select a hero, called when a player clicks on Ready*/
 function SelectHero() {
   if (selectedHero.length === 0) {
     const random = Math.round(Math.random());
@@ -198,12 +198,17 @@ function SelectHero() {
     HeroName: selectedHero,
   });
 
+  clickedReady = true;
+
   $("#ReadyBtn") && $("#ReadyBtn").AddClass("disabled");
   $("#ReadyBtnTxt").text = "Waiting for others";
+
+  GameEvents.SendCustomGameEventToServer("set_player_color", {
+    color: selectedColor,
+  });
 }
 
-/* Enter the game by removing the picking screen, called when the player
- * clicks a button in the layout. */
+/* Enter the game by removing the picking screen, called when the timer runs to 0 */
 function EnterGame() {
   //Hide Hero Selection Panel
   const mainHeroSelectionPanel = $.GetContextPanel()
@@ -250,7 +255,8 @@ function SelectColor(color) {
     Color: color,
   });
 
-  GameEvents.SendCustomGameEventToServer("set_player_color", { color: color });
+  // Set color value locally so we can send it to server once player is ready
+  selectedColor = color;
 }
 
 /* Initialisation - runs when the element is created
