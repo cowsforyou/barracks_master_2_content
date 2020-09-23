@@ -94,7 +94,7 @@ function onPlayerColorConfirmed(data) {
   }
 
   //Disable the color from being selected
-  let usedColorID;
+  let usedColorID = "#";
   switch (usedColor) {
     case "silver":
       usedColorID = "#SelectColorSilver";
