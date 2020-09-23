@@ -188,12 +188,19 @@
   box-shadow: fill rgba(0, 0, 0, 0.4) -4px -4px 8px 8px;
 }
 
- .SelectColorButton:hover {
+
+.SelectColorButton:hover {
   box-shadow: fill rgba(215, 138, 5, 0.75) -4px -4px 8px 8px;
 }
 
 #SelectColorSilver {
   background-color: rgba(182, 192, 192, 1);
+}
+
+.disabledButtons,
+.disabledButtons:hover {
+  box-shadow: none;
+  opacity: 0.1;
 }
 
 #SelectColorBlack {

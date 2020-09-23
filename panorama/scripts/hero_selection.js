@@ -183,7 +183,7 @@ function SwitchToHeroPreview(heroName) {
   });
 }
 
-/* Select a hero, called when a player clicks on Ready*/
+/* Confirms a hero and color, called when a player clicks on Ready*/
 function SelectHero() {
   if (selectedHero.length === 0) {
     const random = Math.round(Math.random());
@@ -202,6 +202,41 @@ function SelectHero() {
 
   $("#ReadyBtn") && $("#ReadyBtn").AddClass("disabled");
   $("#ReadyBtnTxt").text = "Waiting for others";
+
+  $("#SelectColorSilver") &&
+    $("#SelectColorSilver").AddClass("disabledButtons");
+  $("#SelectColorSilver").SetPanelEvent("onactivate", function () {
+    $.Msg("disabled");
+  });
+  $("#SelectColorBlack") && $("#SelectColorBlack").AddClass("disabledButtons");
+  $("#SelectColorBlack").SetPanelEvent("onactivate", function () {
+    $.Msg("disabled");
+  });
+  $("#SelectColorRed") && $("#SelectColorRed").AddClass("disabledButtons");
+  $("#SelectColorRed").SetPanelEvent("onactivate", function () {
+    $.Msg("disabled");
+  });
+
+  $("#SelectColorCyan") && $("#SelectColorCyan").AddClass("disabledButtons");
+  $("#SelectColorCyan").SetPanelEvent("onactivate", function () {
+    $.Msg("disabled");
+  });
+
+  $("#SelectLingFaction") &&
+    $("#SelectLingFaction").AddClass("disabledButtons");
+    $("#SelectLingFaction").SetPanelEvent("onactivate", function () {
+      $.Msg("disabled");
+    });
+  $("#SelectXoyaFaction") &&
+    $("#SelectXoyaFaction").AddClass("disabledButtons");
+    $("#SelectXoyaFaction").SetPanelEvent("onactivate", function () {
+      $.Msg("disabled");
+    });
+  $("#SelectRandomFaction") &&
+    $("#SelectRandomFaction").AddClass("disabledButtons");
+    $("#SelectRandomFaction").SetPanelEvent("onactivate", function () {
+      $.Msg("disabled");
+    });
 
   GameEvents.SendCustomGameEventToServer("set_player_color", {
     color: selectedColor,
