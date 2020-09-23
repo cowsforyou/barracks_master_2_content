@@ -10,6 +10,12 @@ var playerPanels = {};
 let selectedHero = "";
 let clickedReady = false;
 let selectedColor = "";
+let availableColors = {
+  silver: true,
+  black: true,
+  red: true,
+  cyan: true,
+};
 
 //Panels
 const HudMain = $.GetContextPanel().GetParent().GetParent().GetParent();
@@ -92,6 +98,9 @@ function onPlayerColorConfirmed(data) {
   if (selectedColor === usedColor) {
     selectedColor = "";
   }
+
+  //Set available colors locally
+  availableColors[usedColor] = false;
 
   //Disable the color from being selected
   let usedColorID = "#";
@@ -270,6 +279,17 @@ function SelectHero() {
     $.Msg("disabled");
   });
 
+  if (selectedColor.length === 0) {
+    if (availableColors[silver]) {
+      SelectColor("silver");
+    } else if (availableColors[black]) {
+      SelectColor("black");
+    } else if (availableColors[red]) {
+      SelectColor("red");
+    } else {
+      SelectColor("cyan");
+    }
+  }
   GameEvents.SendCustomGameEventToServer("set_player_color", {
     color: selectedColor,
   });
