@@ -34,6 +34,7 @@ GameEvents.Subscribe("picking_time_update", OnTimeUpdate);
 GameEvents.Subscribe("picking_player_pick", OnPlayerPicked);
 GameEvents.Subscribe("hero_preview_pick", onPlayerPreviewed);
 GameEvents.Subscribe("player_color_preview_pick", onPlayerColorSelect);
+GameEvents.Subscribe("player_color_confirmed_pick", onPlayerColorConfirmed);
 
 /* Event Handlers
 =========================================================================*/
@@ -82,6 +83,37 @@ function onPlayerColorSelect(data) {
   //Update the player panel with latest selected color
   playerPanels[data.PlayerID] &&
     playerPanels[data.PlayerID].SetColor(data.Color);
+}
+
+/* A player has confirmed a color, remove available option */
+function onPlayerColorConfirmed(data) {
+  const usedColor = data.Color;
+  //Check if user selected colour was selected
+  if (selectedColor === usedColor) {
+    selectedColor = "";
+  }
+
+  //Disable the color from being selected
+  let usedColorID;
+  switch (usedColor) {
+    case "silver":
+      usedColorID = "#SelectColorSilver";
+      break;
+    case "black":
+      usedColorID = "#SelectColorBlack";
+      break;
+    case "red":
+      usedColorID = "#SelectColorRed";
+      break;
+    case "cyan":
+      usedColorID = "#SelectColorCyan";
+      break;
+  }
+
+  $(usedColorID) && $(usedColorID).AddClass("disabledButtons");
+  $(usedColorID).SetPanelEvent("onactivate", function () {
+    $.Msg("disabled");
+  });
 }
 
 /* Functionality
@@ -224,19 +256,19 @@ function SelectHero() {
 
   $("#SelectLingFaction") &&
     $("#SelectLingFaction").AddClass("disabledButtons");
-    $("#SelectLingFaction").SetPanelEvent("onactivate", function () {
-      $.Msg("disabled");
-    });
+  $("#SelectLingFaction").SetPanelEvent("onactivate", function () {
+    $.Msg("disabled");
+  });
   $("#SelectXoyaFaction") &&
     $("#SelectXoyaFaction").AddClass("disabledButtons");
-    $("#SelectXoyaFaction").SetPanelEvent("onactivate", function () {
-      $.Msg("disabled");
-    });
+  $("#SelectXoyaFaction").SetPanelEvent("onactivate", function () {
+    $.Msg("disabled");
+  });
   $("#SelectRandomFaction") &&
     $("#SelectRandomFaction").AddClass("disabledButtons");
-    $("#SelectRandomFaction").SetPanelEvent("onactivate", function () {
-      $.Msg("disabled");
-    });
+  $("#SelectRandomFaction").SetPanelEvent("onactivate", function () {
+    $.Msg("disabled");
+  });
 
   GameEvents.SendCustomGameEventToServer("set_player_color", {
     color: selectedColor,
