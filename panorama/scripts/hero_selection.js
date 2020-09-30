@@ -260,7 +260,7 @@ function SelectHero() {
   $("#ReadyBtn") && $("#ReadyBtn").AddClass("disabled");
   $("#ReadyBtnTxt").text = "Waiting for others";
 
-  $("#SelectColorrMandarinOrange") &&
+  $("#SelectColorMandarinOrange") &&
     $("#SelectColorMandarinOrange").AddClass("disabledButtons");
   $("#SelectColorMandarinOrange").SetPanelEvent("onactivate", function () {
     $.Msg("disabled");

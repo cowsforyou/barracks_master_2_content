@@ -107,6 +107,17 @@
   text-align: center;
 }
 
+.ColorSelectorParent {
+  flow-children: right;
+  width: 100%;
+}
+
+.ColorSelectorContainer {
+  flow-children: down;
+  horizontal-align: center;
+  width: 45%;
+}
+
 #CustomisationSelector {
   flow-children: down;
   width: 33%;

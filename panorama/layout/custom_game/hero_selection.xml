@@ -23,14 +23,20 @@
 		<Panel id="SelectionContainer" class="SelectionContainer">
 			<Panel class="ColorSelector">
 				<Label class="SelectionTitle" text="Color" />
-				<Button id="SelectColorMandarinOrange" class="SelectColorButton" onactivate="SelectColor('mandarinorange')" />
-				<Button id="SelectColorRed" class="SelectColorButton" onactivate="SelectColor('red')" />
-				<Button id="SelectColorTiffany" class="SelectColorButton" onactivate="SelectColor('tiffany')" />
-				<Button id="SelectColorLimeGreen" class="SelectColorButton" onactivate="SelectColor('limegreen')" />
-				<Button id="SelectColorArmyGreen" class="SelectColorButton" onactivate="SelectColor('armygreen')" />
-				<Button id="SelectColorYellow" class="SelectColorButton" onactivate="SelectColor('yellow')" />
-				<Button id="SelectColorPink" class="SelectColorButton" onactivate="SelectColor('pink')" />
-				<Button id="SelectColorCyan" class="SelectColorButton" onactivate="SelectColor('cyan')" />
+				<Panel class="ColorSelectorParent">
+					<Panel class="ColorSelectorContainer">
+						<Button id="SelectColorMandarinOrange" class="SelectColorButton" onactivate="SelectColor('mandarinorange')" />
+						<Button id="SelectColorRed" class="SelectColorButton" onactivate="SelectColor('red')" />
+						<Button id="SelectColorTiffany" class="SelectColorButton" onactivate="SelectColor('tiffany')" />
+						<Button id="SelectColorLimeGreen" class="SelectColorButton" onactivate="SelectColor('limegreen')" />
+					</Panel>
+					<Panel class="ColorSelectorContainer">
+						<Button id="SelectColorArmyGreen" class="SelectColorButton" onactivate="SelectColor('armygreen')" />
+						<Button id="SelectColorYellow" class="SelectColorButton" onactivate="SelectColor('yellow')" />
+						<Button id="SelectColorPink" class="SelectColorButton" onactivate="SelectColor('pink')" />
+						<Button id="SelectColorCyan" class="SelectColorButton" onactivate="SelectColor('cyan')" />
+					</Panel>
+				</Panel>
 			</Panel>
 			<Panel id="FactionSelector">
 				<Panel id="FactionIcon">
