@@ -188,13 +188,8 @@
   box-shadow: fill rgba(0, 0, 0, 0.4) -4px -4px 8px 8px;
 }
 
-
 .SelectColorButton:hover {
   box-shadow: fill rgba(215, 138, 5, 0.75) -4px -4px 8px 8px;
-}
-
-#SelectColorSilver {
-  background-color: rgba(182, 192, 192, 1);
 }
 
 .disabledButtons,
@@ -203,17 +198,52 @@
   opacity: 0.1;
 }
 
+/* Premium Colours */
+#SelectColorMagenta {
+  background-color: rgba(191, 0, 255, 1);
+}
+
+#SelectColorSilver {
+  background-color: rgba(182, 192, 192, 1);
+}
+
 #SelectColorBlack {
   background-color: rgba(0, 0, 0, 1);
 }
 
+/* Normal Colours */
+#SelectColorMandarinOrange {
+  background-color: rgba(215, 138, 5, 1);
+}
+
 #SelectColorRed {
-  background-color: rgba(255, 0, 0, 1);
+  background-color: rgba(128, 0, 3, 1);
+}
+
+#SelectColorTiffany {
+  background-color: rgba(0, 156, 201, 1);
+}
+
+#SelectColorLimeGreen {
+  background-color: rgba(170, 255, 170, 1);
+}
+
+#SelectColorArmyGreen {
+  background-color: rgba(0, 200, 50, 1);
+}
+
+#SelectColorYellow {
+  background-color: rgba(255, 255, 0, 1);
+}
+
+#SelectColorPink {
+  background-color: rgba(255, 125, 200, 1);
 }
 
 #SelectColorCyan {
   background-color: rgba(0, 255, 255, 1);
 }
+
 .RandomFactionPreview {
   width: 330px; 
   height: 330px; 

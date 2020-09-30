@@ -11,9 +11,13 @@ let selectedHero = "";
 let clickedReady = false;
 let selectedColor = "";
 let availableColors = {
-  silver: true,
-  black: true,
+  mandarinorange: true,
   red: true,
+  tiffany: true,
+  limegreen: true,
+  armygreen: true,
+  yellow: true,
+  pink: true,
   cyan: true,
 };
 
@@ -105,14 +109,26 @@ function onPlayerColorConfirmed(data) {
   //Disable the color from being selected
   let usedColorID = "#";
   switch (usedColor) {
-    case "silver":
-      usedColorID = "#SelectColorSilver";
-      break;
-    case "black":
-      usedColorID = "#SelectColorBlack";
+    case "mandarinorange":
+      usedColorID = "#SelectColorMandarinOrange";
       break;
     case "red":
       usedColorID = "#SelectColorRed";
+      break;
+    case "tiffany":
+      usedColorID = "#SelectColorTiffany";
+      break;
+    case "limegreen":
+      usedColorID = "#SelectColorLimeGreen";
+      break;
+    case "armygreen":
+      usedColorID = "#SelectColorArmyGreen";
+      break;
+    case "yellow":
+      usedColorID = "#SelectColorYellow";
+      break;
+    case "pink":
+      usedColorID = "#SelectColorPink";
       break;
     case "cyan":
       usedColorID = "#SelectColorCyan";
@@ -244,20 +260,39 @@ function SelectHero() {
   $("#ReadyBtn") && $("#ReadyBtn").AddClass("disabled");
   $("#ReadyBtnTxt").text = "Waiting for others";
 
-  $("#SelectColorSilver") &&
-    $("#SelectColorSilver").AddClass("disabledButtons");
-  $("#SelectColorSilver").SetPanelEvent("onactivate", function () {
-    $.Msg("disabled");
-  });
-  $("#SelectColorBlack") && $("#SelectColorBlack").AddClass("disabledButtons");
-  $("#SelectColorBlack").SetPanelEvent("onactivate", function () {
+  $("#SelectColorrMandarinOrange") &&
+    $("#SelectColorMandarinOrange").AddClass("disabledButtons");
+  $("#SelectColorMandarinOrange").SetPanelEvent("onactivate", function () {
     $.Msg("disabled");
   });
   $("#SelectColorRed") && $("#SelectColorRed").AddClass("disabledButtons");
   $("#SelectColorRed").SetPanelEvent("onactivate", function () {
     $.Msg("disabled");
   });
-
+  $("#SelectColorTiffany") &&
+    $("#SelectColorTiffany").AddClass("disabledButtons");
+  $("#SelectColorTiffany").SetPanelEvent("onactivate", function () {
+    $.Msg("disabled");
+  });
+  $("#SelectColorLimeGreen") &&
+    $("#SelectColorLimeGreen").AddClass("disabledButtons");
+  $("#SelectColorLimeGreen").SetPanelEvent("onactivate", function () {
+    $.Msg("disabled");
+  });
+  $("#SelectColorArmyGreen") &&
+    $("#SelectColorArmyGreen").AddClass("disabledButtons");
+  $("#SelectColorArmyGreen").SetPanelEvent("onactivate", function () {
+    $.Msg("disabled");
+  });
+  $("#SelectColorYellow") &&
+    $("#SelectColorYellow").AddClass("disabledButtons");
+  $("#SelectColorYellow").SetPanelEvent("onactivate", function () {
+    $.Msg("disabled");
+  });
+  $("#SelectColorPink") && $("#SelectColorPink").AddClass("disabledButtons");
+  $("#SelectColorPink").SetPanelEvent("onactivate", function () {
+    $.Msg("disabled");
+  });
   $("#SelectColorCyan") && $("#SelectColorCyan").AddClass("disabledButtons");
   $("#SelectColorCyan").SetPanelEvent("onactivate", function () {
     $.Msg("disabled");
@@ -280,12 +315,20 @@ function SelectHero() {
   });
 
   if (selectedColor.length === 0) {
-    if (availableColors["silver"]) {
-      SelectColor("silver");
-    } else if (availableColors["black"]) {
-      SelectColor("black");
+    if (availableColors["mandarinorange"]) {
+      SelectColor("mandarinorange");
     } else if (availableColors["red"]) {
       SelectColor("red");
+    } else if (availableColors["tiffany"]) {
+      SelectColor("tiffany");
+    } else if (availableColors["limegreen"]) {
+      SelectColor("limegreen");
+    } else if (availableColors["armygreen"]) {
+      SelectColor("armygreen");
+    } else if (availableColors["yellow"]) {
+      SelectColor("yellow");
+    } else if (availableColors["pink"]) {
+      SelectColor("pink");
     } else {
       SelectColor("cyan");
     }
