@@ -280,11 +280,11 @@ function SelectHero() {
   });
 
   if (selectedColor.length === 0) {
-    if (availableColors[silver]) {
+    if (availableColors["silver"]) {
       SelectColor("silver");
-    } else if (availableColors[black]) {
+    } else if (availableColors["black"]) {
       SelectColor("black");
-    } else if (availableColors[red]) {
+    } else if (availableColors["red"]) {
       SelectColor("red");
     } else {
       SelectColor("cyan");
