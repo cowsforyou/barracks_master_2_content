@@ -258,6 +258,9 @@ function SelectHero() {
   clickedReady = true;
 
   $("#ReadyBtn") && $("#ReadyBtn").AddClass("disabled");
+  $("#ReadyBtn").SetPanelEvent("onactivate", function () {
+    $.Msg("disabled");
+  });
   $("#ReadyBtnTxt").text = "Waiting for others";
 
   $("#SelectColorMandarinOrange") &&
