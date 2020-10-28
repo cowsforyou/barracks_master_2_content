@@ -16,6 +16,7 @@
 				var pID = playerID;
 				var playerInfo = Game.GetPlayerInfo( playerID );
 				$('#PlayerAvatar').steamid = playerInfo.player_steamid;
+				$('#PlayerName').text = playerInfo.player_name;
 			},
 
 			//Sets if the panel is on the right or left side of the screen
@@ -57,7 +58,7 @@
 
 	<Panel class="PickingPlayer">
 		<DOTAAvatarImage id="PlayerAvatar" class="AvatarImg" />
-		<Label text="Xiao Bird" />
+		<Label id='PlayerName' text="?" />
 		<Label text="Calibrating" />
 		<Label id='HeroPanelColor' text='?' />
 		<Label id='HeroPanelFaction' text='?' />
