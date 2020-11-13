@@ -41,7 +41,17 @@
 
 			//Set the color of the players team
 			SetColor : function( color ) {
-				$('#HeroPanelColor').text = color.charAt(0).toUpperCase() + color.slice(1);
+				let displayColor = color;
+				switch(color) {
+					case "LightGreen":
+					displayColor = "Light Green";
+					break;
+					case "LightBlue":
+					displayColor = "Light Blue";
+					break;
+				}
+
+				$('#HeroPanelColor').text = displayColor;
 			},
 
 			//Set the color of the players team

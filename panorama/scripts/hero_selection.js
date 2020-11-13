@@ -11,14 +11,17 @@ let selectedHero = "";
 let clickedReady = false;
 let selectedColor = "";
 let availableColors = {
-  mandarinorange: true,
-  red: true,
-  tiffany: true,
-  limegreen: true,
-  armygreen: true,
-  yellow: true,
-  pink: true,
-  cyan: true,
+  Gold: true,
+  Red: true,
+  Blue: true,
+  LightGreen: true,
+  Green: true,
+  Yellow: true,
+  Pink: true,
+  LightBlue: true,
+  Purple: true,
+  Silver: true,
+  Black: true,
 };
 
 //Panels
@@ -45,7 +48,7 @@ GameEvents.Subscribe("picking_player_pick", OnPlayerPicked);
 GameEvents.Subscribe("hero_preview_pick", onPlayerPreviewed);
 GameEvents.Subscribe("player_color_preview_pick", onPlayerColorSelect);
 GameEvents.Subscribe("player_color_confirmed_pick", onPlayerColorConfirmed);
-
+GameEvents.Subscribe("get_player_premium_colors", onGetPlayerPremiumColors);
 /* Event Handlers
 =========================================================================*/
 
@@ -109,29 +112,38 @@ function onPlayerColorConfirmed(data) {
   //Disable the color from being selected
   let usedColorID = "#";
   switch (usedColor) {
-    case "mandarinorange":
-      usedColorID = "#SelectColorMandarinOrange";
+    case "Gold":
+      usedColorID = "#SelectColorGold";
       break;
-    case "red":
+    case "Red":
       usedColorID = "#SelectColorRed";
       break;
-    case "tiffany":
-      usedColorID = "#SelectColorTiffany";
+    case "Blue":
+      usedColorID = "#SelectColorBlue";
       break;
-    case "limegreen":
-      usedColorID = "#SelectColorLimeGreen";
+    case "LightGreen":
+      usedColorID = "#SelectColorLightGreen";
       break;
-    case "armygreen":
-      usedColorID = "#SelectColorArmyGreen";
+    case "Green":
+      usedColorID = "#SelectColorGreen";
       break;
-    case "yellow":
+    case "Yellow":
       usedColorID = "#SelectColorYellow";
       break;
-    case "pink":
+    case "Pink":
       usedColorID = "#SelectColorPink";
       break;
-    case "cyan":
-      usedColorID = "#SelectColorCyan";
+    case "LightBlue":
+      usedColorID = "#SelectColorLightBlue";
+      break;
+    case "Purple":
+      usedColorID = "#SelectColorPurple";
+      break;
+    case "Silver":
+      usedColorID = "#SelectColorSilver";
+      break;
+    case "Black":
+      usedColorID = "#SelectColorBlack";
       break;
   }
 
@@ -141,6 +153,28 @@ function onPlayerColorConfirmed(data) {
   });
 }
 
+function onGetPlayerPremiumColors(colorData) {
+  if (colorData.Purple) {
+    $("#SelectColorPurple") && $("#SelectColorPurple").RemoveClass("disabledButtons");
+    $("#SelectColorPurple").SetPanelEvent("onactivate", function () {
+      SelectColor('Purple');
+    });
+  }
+
+  if (colorData.Silver) {
+    $("#SelectColorSilver") && $("#SelectColorSilver").RemoveClass("disabledButtons");
+    $("#SelectColorSilver").SetPanelEvent("onactivate", function () {
+      SelectColor('Silver');
+    });
+  }
+
+  if (colorData.Black) {
+    $("#SelectColorBlack") && $("#SelectColorBlack").RemoveClass("disabledButtons");
+    $("#SelectColorBlack").SetPanelEvent("onactivate", function () {
+      SelectColor('Black');
+    });
+  }
+}
 /* Functionality
 =========================================================================*/
 
@@ -263,28 +297,28 @@ function SelectHero() {
   });
   $("#ReadyBtnTxt").text = "Waiting for others";
 
-  $("#SelectColorMandarinOrange") &&
-    $("#SelectColorMandarinOrange").AddClass("disabledButtons");
-  $("#SelectColorMandarinOrange").SetPanelEvent("onactivate", function () {
+  $("#SelectColorGold") &&
+    $("#SelectColorGold").AddClass("disabledButtons");
+  $("#SelectColorGold").SetPanelEvent("onactivate", function () {
     $.Msg("disabled");
   });
   $("#SelectColorRed") && $("#SelectColorRed").AddClass("disabledButtons");
   $("#SelectColorRed").SetPanelEvent("onactivate", function () {
     $.Msg("disabled");
   });
-  $("#SelectColorTiffany") &&
-    $("#SelectColorTiffany").AddClass("disabledButtons");
-  $("#SelectColorTiffany").SetPanelEvent("onactivate", function () {
+  $("#SelectColorBlue") &&
+    $("#SelectColorBlue").AddClass("disabledButtons");
+  $("#SelectColorBlue").SetPanelEvent("onactivate", function () {
     $.Msg("disabled");
   });
-  $("#SelectColorLimeGreen") &&
-    $("#SelectColorLimeGreen").AddClass("disabledButtons");
-  $("#SelectColorLimeGreen").SetPanelEvent("onactivate", function () {
+  $("#SelectColorLightGreen") &&
+    $("#SelectColorLightGreen").AddClass("disabledButtons");
+  $("#SelectColorLightGreen").SetPanelEvent("onactivate", function () {
     $.Msg("disabled");
   });
-  $("#SelectColorArmyGreen") &&
-    $("#SelectColorArmyGreen").AddClass("disabledButtons");
-  $("#SelectColorArmyGreen").SetPanelEvent("onactivate", function () {
+  $("#SelectColorGreen") &&
+    $("#SelectColorGreen").AddClass("disabledButtons");
+  $("#SelectColorGreen").SetPanelEvent("onactivate", function () {
     $.Msg("disabled");
   });
   $("#SelectColorYellow") &&
@@ -296,11 +330,22 @@ function SelectHero() {
   $("#SelectColorPink").SetPanelEvent("onactivate", function () {
     $.Msg("disabled");
   });
-  $("#SelectColorCyan") && $("#SelectColorCyan").AddClass("disabledButtons");
-  $("#SelectColorCyan").SetPanelEvent("onactivate", function () {
+  $("#SelectColorLightBlue") && $("#SelectColorLightBlue").AddClass("disabledButtons");
+  $("#SelectColorLightBlue").SetPanelEvent("onactivate", function () {
     $.Msg("disabled");
   });
-
+  $("#SelectColorSilver") && $("#SelectColorSilver").AddClass("disabledButtons");
+  $("#SelectColorSilver").SetPanelEvent("onactivate", function () {
+    $.Msg("disabled");
+  });
+  $("#SelectColorPurple") && $("#SelectColorPurple").AddClass("disabledButtons");
+  $("#SelectColorPurple").SetPanelEvent("onactivate", function () {
+    $.Msg("disabled");
+  });
+  $("#SelectColorBlack") && $("#SelectColorBlack").AddClass("disabledButtons");
+  $("#SelectColorBlack").SetPanelEvent("onactivate", function () {
+    $.Msg("disabled");
+  });
   $("#SelectLingFaction") &&
     $("#SelectLingFaction").AddClass("disabledButtons");
   $("#SelectLingFaction").SetPanelEvent("onactivate", function () {
@@ -318,22 +363,28 @@ function SelectHero() {
   });
 
   if (selectedColor.length === 0) {
-    if (availableColors["mandarinorange"]) {
-      SelectColor("mandarinorange");
-    } else if (availableColors["red"]) {
-      SelectColor("red");
-    } else if (availableColors["tiffany"]) {
-      SelectColor("tiffany");
-    } else if (availableColors["limegreen"]) {
-      SelectColor("limegreen");
-    } else if (availableColors["armygreen"]) {
-      SelectColor("armygreen");
-    } else if (availableColors["yellow"]) {
-      SelectColor("yellow");
-    } else if (availableColors["pink"]) {
-      SelectColor("pink");
+    if (availableColors["Gold"]) {
+      SelectColor("Gold");
+    } else if (availableColors["Red"]) {
+      SelectColor("Red");
+    } else if (availableColors["Blue"]) {
+      SelectColor("Blue");
+    } else if (availableColors["LightGreen"]) {
+      SelectColor("LightGreen");
+    } else if (availableColors["Green"]) {
+      SelectColor("Green");
+    } else if (availableColors["Yellow"]) {
+      SelectColor("Yellow");
+    } else if (availableColors["Pink"]) {
+      SelectColor("Pink");
+    } else if (availableColors["Purple"]) {
+      SelectColor("Purple");
+    } else if (availableColors["Silver"]) {
+      SelectColor("Silver");
+    } else if (availableColors["Black"]) {
+      SelectColor("Black");
     } else {
-      SelectColor("cyan");
+      SelectColor("LightBlue");
     }
   }
   GameEvents.SendCustomGameEventToServer("set_player_color", {
@@ -421,4 +472,7 @@ function SelectColor(color) {
 
   ///Load player elements
   LoadPlayers();
+
+  //Check Premium Colors
+  GameEvents.SendCustomGameEventToServer("check_player_premium_colors", {});
 })();

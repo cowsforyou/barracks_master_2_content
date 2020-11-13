@@ -25,16 +25,19 @@
 				<Label class="SelectionTitle" text="Color" />
 				<Panel class="ColorSelectorParent">
 					<Panel class="ColorSelectorContainer">
-						<Button id="SelectColorMandarinOrange" class="SelectColorButton" onactivate="SelectColor('mandarinorange')" />
-						<Button id="SelectColorRed" class="SelectColorButton" onactivate="SelectColor('red')" />
-						<Button id="SelectColorTiffany" class="SelectColorButton" onactivate="SelectColor('tiffany')" />
-						<Button id="SelectColorLimeGreen" class="SelectColorButton" onactivate="SelectColor('limegreen')" />
+						<Button id="SelectColorGold" class="SelectColorButton" onactivate="SelectColor('Gold')" />
+						<Button id="SelectColorRed" class="SelectColorButton" onactivate="SelectColor('Red')" />
+						<Button id="SelectColorBlue" class="SelectColorButton" onactivate="SelectColor('Blue')" />
+						<Button id="SelectColorLightGreen" class="SelectColorButton" onactivate="SelectColor('LightGreen')" />
+						<Button id="SelectColorPurple" class="SelectColorButton disabledButtons" />
+						<Button id="SelectColorBlack" class="SelectColorButton disabledButtons"/>
 					</Panel>
 					<Panel class="ColorSelectorContainer">
-						<Button id="SelectColorArmyGreen" class="SelectColorButton" onactivate="SelectColor('armygreen')" />
-						<Button id="SelectColorYellow" class="SelectColorButton" onactivate="SelectColor('yellow')" />
-						<Button id="SelectColorPink" class="SelectColorButton" onactivate="SelectColor('pink')" />
-						<Button id="SelectColorCyan" class="SelectColorButton" onactivate="SelectColor('cyan')" />
+						<Button id="SelectColorGreen" class="SelectColorButton" onactivate="SelectColor('Green')" />
+						<Button id="SelectColorYellow" class="SelectColorButton" onactivate="SelectColor('Yellow')" />
+						<Button id="SelectColorPink" class="SelectColorButton" onactivate="SelectColor('Pink')" />
+						<Button id="SelectColorLightBlue" class="SelectColorButton" onactivate="SelectColor('LightBlue')" />
+						<Button id="SelectColorSilver" class="SelectColorButton disabledButtons" />
 					</Panel>
 				</Panel>
 			</Panel>
