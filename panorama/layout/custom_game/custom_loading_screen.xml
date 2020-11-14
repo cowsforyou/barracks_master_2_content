@@ -1,4 +1,10 @@
 <root>
+	<scripts>
+		<!-- Libraries -->
+		<include src="file://{resources}/scripts/custom_loading_screen.js" />
+		<include src="file://{resources}/scripts/modular.js" />
+
+	</scripts>
 	<styles>
 		<include src="file://{resources}/styles/custom_loading_screen.css" />
 	</styles>
@@ -16,8 +22,6 @@
 			</Panel>
 			<Panel id="BM_Ladder">
 				<Label id="LadderTitle" text="#bm_ladder_title" />
-				<Label id="LadderPlayerPanel" text="" style="" />
-				<Label id="LadderText" text="#bm_ladder_text" style="" />
 			</Panel>
 		</Panel>
 	</Panel>
