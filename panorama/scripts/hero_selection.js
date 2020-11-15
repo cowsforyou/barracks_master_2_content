@@ -158,7 +158,7 @@ function onPlayerColorConfirmed(data) {
 function onGetPlayerPremiumColors(colorData) {
   if (colorData.Purple) {
     $('#LockedPurpleDescription') && $('#LockedPurpleDescription').DeleteAsync(0);
-    $("#SelectColorPurple") && $("#SelectColorPurple").RemoveClass("disabledButtons");
+    $("#SelectColorPurple") && $("#SelectColorPurple").RemoveClass("disabledPremiumButtons");
     $("#SelectColorPurple").SetPanelEvent("onactivate", function () {
       SelectColor('Purple');
     });
@@ -166,7 +166,7 @@ function onGetPlayerPremiumColors(colorData) {
 
   if (colorData.Silver) {
     $('#LockedSilverDescription') && $('#LockedSilverDescription').DeleteAsync(0);
-    $("#SelectColorSilver") && $("#SelectColorSilver").RemoveClass("disabledButtons");
+    $("#SelectColorSilver") && $("#SelectColorSilver").RemoveClass("disabledPremiumButtons");
     $("#SelectColorSilver").SetPanelEvent("onactivate", function () {
       SelectColor('Silver');
     });
@@ -174,7 +174,7 @@ function onGetPlayerPremiumColors(colorData) {
 
   if (colorData.Black) {
     $('#LockedBlackDescription') && $('#LockedBlackDescription').DeleteAsync(0);
-    $("#SelectColorBlack") && $("#SelectColorBlack").RemoveClass("disabledButtons");
+    $("#SelectColorBlack") && $("#SelectColorBlack").RemoveClass("disabledPremiumButtons");
     $("#SelectColorBlack").SetPanelEvent("onactivate", function () {
       SelectColor('Black');
     });
@@ -273,9 +273,9 @@ function SwitchToHeroPreview(heroName) {
     false
   );
   previewPanel.BLoadLayoutFromString(
-    '<root><Panel style="horizontal-align: center; flow-children: down;"><DOTAScenePanel particleonly="false" style="width: 330px; height: 330px; margin-top: 20px; opacity-mask: url(\'s2r://panorama/images/masks/softedge_box_png.vtex\');" unit="' +
+    '<root><Panel style="horizontal-align: center; flow-children: down;"><DOTAScenePanel particleonly="false" style="width: 330px; height: 330px; margin-top: 0px; opacity-mask: url(\'s2r://panorama/images/masks/softedge_box_png.vtex\');" unit="' +
       heroName +
-      '" /><Label style="horizontal-align: center; vertical-align: center; margin-top: 20px;" text="' +
+      '" /><Label style="horizontal-align: center; vertical-align: center; margin-top: 10px;" text="' +
       factionNamePreview +
       '" /></Panel></root>',
     false,

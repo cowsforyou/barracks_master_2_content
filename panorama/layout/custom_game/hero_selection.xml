@@ -32,7 +32,7 @@
 						<Button id="SelectColorRed" class="SelectColorButton" onactivate="SelectColor('Red')" />
 						<Button id="SelectColorBlue" class="SelectColorButton" onactivate="SelectColor('Blue')" />
 						<Button id="SelectColorLightGreen" class="SelectColorButton" onactivate="SelectColor('LightGreen')" />
-						<Button id="SelectColorPurple" class="SelectColorButton disabledButtons lockedButtons">
+						<Button id="SelectColorPurple" class="SelectColorButton lockedButtons disabledPremiumButtons">
 							<Label id="LockedPurpleDescription" text="LOCKED" />
 						</Button>
 					</Panel>
@@ -41,10 +41,10 @@
 						<Button id="SelectColorYellow" class="SelectColorButton" onactivate="SelectColor('Yellow')" />
 						<Button id="SelectColorPink" class="SelectColorButton" onactivate="SelectColor('Pink')" />
 						<Button id="SelectColorLightBlue" class="SelectColorButton" onactivate="SelectColor('LightBlue')" />
-						<Button id="SelectColorSilver" class="SelectColorButton disabledButtons lockedButtons">
+						<Button id="SelectColorSilver" class="SelectColorButton lockedButtons disabledPremiumButtons">
 							<Label id="LockedSilverDescription" text="LOCKED" />
 						</Button>
-						<Button id="SelectColorBlack" class="SelectColorButton disabledButtons lockedButtons">
+						<Button id="SelectColorBlack" class="SelectColorButton lockedButtons disabledPremiumButtons">
 							<Label id="LockedBlackDescription" text="LOCKED" />
 						</Button>
 					</Panel>
