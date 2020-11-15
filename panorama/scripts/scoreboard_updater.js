@@ -117,7 +117,9 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
 
         var cs = CustomNetTables.GetTableValue("scores", playerId)["cs"]
         var netWorth = CustomNetTables.GetTableValue("scores", playerId)["netWorth"]
-
+        var colorData = CustomNetTables.GetTableValue('selected_player_colors', playerId)
+        let colorPanel = playerPanel.FindChildInLayoutFile( "ColorContainer" )
+        colorPanel && colorData && colorPanel.AddClass(colorData["color"])
         // disabling lumber and gold from scoreboard
             // var lumber = CustomNetTables.GetTableValue("scores", playerId)["lumber"]
             // var gold = CustomNetTables.GetTableValue("scores", playerId)["gold"]    

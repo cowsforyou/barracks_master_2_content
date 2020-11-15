@@ -1,7 +1,7 @@
 <root>
-    <styles>
-        <include src="file://{resources}/styles/scoreboard.css" />
-    </styles>
+	<styles>
+		<include src="file://{resources}/styles/scoreboard.css" />
+	</styles>
 	<script>
 		function ToggleMute()
 		{
@@ -33,6 +33,7 @@
 				<!-- <Label id="TeammateGoldAmount" text="999" /> -->
 				<Button id="MuteButton" onactivate="ToggleMute();" />
 			</Panel>
+			<Panel id="ColorContainer" class="ScoreCol_Color ScoreboardPanel" />
 			<Panel id="CreepScoreContainer" class="ScoreCol_CS ScoreboardPanel">
 				<Label id="CS" text="999" />
 			</Panel>
