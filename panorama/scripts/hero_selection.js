@@ -236,7 +236,7 @@ function SwitchToHeroPreview(heroName) {
     factionDescriptionHash = "#bm_ling_lore";
     selectedHero = "npc_dota_hero_keeper_of_the_light";
   } else if (heroName === "npc_dota_hero_nevermore") {
-    factionNamePreview = "Xoya";
+    factionNamePreview = "Xoo";
     factionDescriptionHash = "#bm_xoo_lore";
     selectedHero = "npc_dota_hero_nevermore";
   } else {
