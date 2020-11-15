@@ -1,8 +1,8 @@
 <root>
 	<scripts>
 		<!-- Libraries -->
-		<include src="file://{resources}/scripts/custom_loading_screen.js" />
 		<include src="file://{resources}/scripts/modular.js" />
+		<include src="file://{resources}/scripts/custom_loading_screen.js" />
 
 	</scripts>
 	<styles>
