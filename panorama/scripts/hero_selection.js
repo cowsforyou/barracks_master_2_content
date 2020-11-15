@@ -179,6 +179,30 @@ function onGetPlayerPremiumColors(colorData) {
       SelectColor('Black');
     });
   }
+
+  if (colorData.LightGreen) {
+    $('#LockedBlackDescription') && $('#LockedBlackDescription').DeleteAsync(0);
+    $("#SelectColorLightGreen") && $("#SelectColorLightGreen").RemoveClass("disabledPremiumButtons");
+    $("#SelectColorLightGreen").SetPanelEvent("onactivate", function () {
+      SelectColor('LightGreen');
+    });
+  }
+
+  if (colorData.Blue) {
+    $('#LockedBlueDescription') && $('#LockedBlueDescription').DeleteAsync(0);
+    $("#SelectColorBlue") && $("#SelectColorBlue").RemoveClass("disabledPremiumButtons");
+    $("#SelectColorBlue").SetPanelEvent("onactivate", function () {
+      SelectColor('Blue');
+    });
+  }
+
+  if (colorData.LightBlue) {
+    $('#LockedLightBlueDescription') && $('#LockedLightBlueDescription').DeleteAsync(0);
+    $("#SelectColorLightBlue") && $("#SelectColorLightBlue").RemoveClass("disabledPremiumButtons");
+    $("#SelectColorLightBlue").SetPanelEvent("onactivate", function () {
+      SelectColor('LightBlue');
+    });
+  }
 }
 
 function onGetMapInfo(mapData) {
@@ -383,24 +407,18 @@ function SelectHero() {
   });
 
   if (selectedColor.length === 0 || selectedColor === "Random") {
-    const random = Math.round(Math.random() * 8);
+    const random = Math.round(Math.random() * 5);
 
     if (availableColors["Gold"] && random === 0) {
       SelectColor("Gold");
     } else if (availableColors["Red"] && random === 1) {
       SelectColor("Red");
-    } else if (availableColors["Blue"] && random === 2) {
-      SelectColor("Blue");
-    } else if (availableColors["LightGreen"] && random === 3) {
-      SelectColor("LightGreen");
-    } else if (availableColors["Green"] && random === 4) {
+    } else if (availableColors["Green"] && random === 2) {
       SelectColor("Green");
-    } else if (availableColors["Yellow"] && random === 5) {
+    } else if (availableColors["Yellow"] && random === 3) {
       SelectColor("Yellow");
-    } else if (availableColors["Pink"] && random === 6) {
+    } else {
       SelectColor("Pink");
-     } else {
-      SelectColor("LightBlue");
     }
   }
   GameEvents.SendCustomGameEventToServer("set_player_color", {
