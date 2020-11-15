@@ -35,8 +35,16 @@
   height: 30%;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  background-image: url(file://{images}/custom_game/pregame_screen/bm2_legacy_minimap.png);
   color: #000000;
+}
+
+.MapLegacy {
+  background-image: url(file://{images}/custom_game/pregame_screen/bm2_legacy_minimap.png);
+
+}
+
+.MapMexicanStandOff {
+  background-image: url(file://{images}/custom_game/pregame_screen/bm2_mexican_standoff_minimap.png);
 }
 
 .MapInfoContainer {
@@ -77,6 +85,12 @@
   width: 100%;
   text-align: center;
   margin-bottom: 20px;
+}
+
+.CustomiseDescription {
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
 }
 
 #FactionSelector {
@@ -164,7 +178,7 @@
   box-shadow: fill rgba(0, 0, 0, 0.4) -4px -4px 8px 8px;
 }
 
- .PreviewFactionButton:hover {
+.PreviewFactionButton:hover {
   box-shadow: fill rgba(215, 138, 5, 0.75) -4px -4px 8px 8px;
 }
 
@@ -181,10 +195,10 @@
 }
 
 .RandomFactionPreview {
-  width: 330px; 
-  height: 330px; 
-  margin-top: 20px; 
-  opacity-mask: url('s2r://panorama/images/masks/softedge_box_png.vtex');
+  width: 330px;
+  height: 330px;
+  margin-top: 20px;
+  opacity-mask: url("s2r://panorama/images/masks/softedge_box_png.vtex");
   horizontal-align: center;
 }
 
@@ -207,6 +221,13 @@
 .disabledButtons:hover {
   box-shadow: none;
   opacity: 0.1;
+}
+
+.lockedButtons Label {
+  horizontal-align: center;
+  vertical-align: center;
+  text-align: center;
+  font-size: 20px;
 }
 
 /* Premium Colours */
@@ -279,11 +300,15 @@
   background-color: rgba(0, 0, 0, 1);
 }
 
+#SelectColorRandom {
+  background-color: rgba(92, 92, 92, 1);
+}
+
 .RandomFactionPreview {
-  width: 330px; 
-  height: 330px; 
-  margin-top: 20px; 
-  opacity-mask: url('s2r://panorama/images/masks/softedge_box_png.vtex');
+  width: 330px;
+  height: 330px;
+  margin-top: 20px;
+  opacity-mask: url("s2r://panorama/images/masks/softedge_box_png.vtex");
   horizontal-align: center;
 }
 

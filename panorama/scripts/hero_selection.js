@@ -49,6 +49,8 @@ GameEvents.Subscribe("hero_preview_pick", onPlayerPreviewed);
 GameEvents.Subscribe("player_color_preview_pick", onPlayerColorSelect);
 GameEvents.Subscribe("player_color_confirmed_pick", onPlayerColorConfirmed);
 GameEvents.Subscribe("get_player_premium_colors", onGetPlayerPremiumColors);
+GameEvents.Subscribe("send_map_info", onGetMapInfo);
+
 /* Event Handlers
 =========================================================================*/
 
@@ -155,6 +157,7 @@ function onPlayerColorConfirmed(data) {
 
 function onGetPlayerPremiumColors(colorData) {
   if (colorData.Purple) {
+    $('#LockedPurpleDescription') && $('#LockedPurpleDescription').DeleteAsync(0);
     $("#SelectColorPurple") && $("#SelectColorPurple").RemoveClass("disabledButtons");
     $("#SelectColorPurple").SetPanelEvent("onactivate", function () {
       SelectColor('Purple');
@@ -162,6 +165,7 @@ function onGetPlayerPremiumColors(colorData) {
   }
 
   if (colorData.Silver) {
+    $('#LockedSilverDescription') && $('#LockedSilverDescription').DeleteAsync(0);
     $("#SelectColorSilver") && $("#SelectColorSilver").RemoveClass("disabledButtons");
     $("#SelectColorSilver").SetPanelEvent("onactivate", function () {
       SelectColor('Silver');
@@ -169,10 +173,22 @@ function onGetPlayerPremiumColors(colorData) {
   }
 
   if (colorData.Black) {
+    $('#LockedBlackDescription') && $('#LockedBlackDescription').DeleteAsync(0);
     $("#SelectColorBlack") && $("#SelectColorBlack").RemoveClass("disabledButtons");
     $("#SelectColorBlack").SetPanelEvent("onactivate", function () {
       SelectColor('Black');
     });
+  }
+}
+
+function onGetMapInfo(mapData) {
+  $('#MapInfoMapName').text = mapData.mapName.toUpperCase();
+  const maxPlayerPerTeam = mapData.maxPlayer / 2;
+  $('#MapInfoMaxPlayers').text = maxPlayerPerTeam + ' VS ' + maxPlayerPerTeam;
+  if (mapData.mapName === 'bm2_legacy') {
+    $('#Map').AddClass('MapLegacy');
+  } else if (mapData.mapName === 'bm2_mexican_standoff') {
+    $('#Map').AddClass('MapMexicanStandOff');
   }
 }
 /* Functionality
@@ -224,7 +240,7 @@ function SwitchToHeroPreview(heroName) {
 
   var textPanel = $.CreatePanel(
     "Label",
-    $("#CustomisationSelector"),
+    $("#FactionSelector"),
     "BuilderInfo"
   );
 
@@ -252,7 +268,7 @@ function SwitchToHeroPreview(heroName) {
   }
 
   textPanel.BLoadLayoutFromString(
-    '<root><Label text="' + factionDescriptionHash + '" /></root>',
+    '<root><Label style="horizontal-align: center; text-align: center; margin-top: 10px;" text="' + factionDescriptionHash + '" /></root>',
     false,
     false
   );
@@ -266,7 +282,7 @@ function SwitchToHeroPreview(heroName) {
     false
   );
   $("#FactionSelector").MoveChildAfter(previewPanel, $("#FactionIcon"));
-  $("#CustomisationSelector").MoveChildAfter(textPanel, $("#CustomiseTitle"));
+  $('#DefaultFactionSelection') && $('#DefaultFactionSelection').DeleteAsync(0);
 
   //Send the hero preview to the server
   GameEvents.SendCustomGameEventToServer("hero_preview", {
@@ -346,6 +362,10 @@ function SelectHero() {
   $("#SelectColorBlack").SetPanelEvent("onactivate", function () {
     $.Msg("disabled");
   });
+  $("#SelectColorRandom") && $("#SelectColorRandom").AddClass("disabledButtons");
+  $("#SelectColorRandom").SetPanelEvent("onactivate", function () {
+    $.Msg("disabled");
+  });
   $("#SelectLingFaction") &&
     $("#SelectLingFaction").AddClass("disabledButtons");
   $("#SelectLingFaction").SetPanelEvent("onactivate", function () {
@@ -362,28 +382,24 @@ function SelectHero() {
     $.Msg("disabled");
   });
 
-  if (selectedColor.length === 0) {
-    if (availableColors["Gold"]) {
+  if (selectedColor.length === 0 || selectedColor === "Random") {
+    const random = Math.round(Math.random() * 8);
+
+    if (availableColors["Gold"] && random === 0) {
       SelectColor("Gold");
-    } else if (availableColors["Red"]) {
+    } else if (availableColors["Red"] && random === 1) {
       SelectColor("Red");
-    } else if (availableColors["Blue"]) {
+    } else if (availableColors["Blue"] && random === 2) {
       SelectColor("Blue");
-    } else if (availableColors["LightGreen"]) {
+    } else if (availableColors["LightGreen"] && random === 3) {
       SelectColor("LightGreen");
-    } else if (availableColors["Green"]) {
+    } else if (availableColors["Green"] && random === 4) {
       SelectColor("Green");
-    } else if (availableColors["Yellow"]) {
+    } else if (availableColors["Yellow"] && random === 5) {
       SelectColor("Yellow");
-    } else if (availableColors["Pink"]) {
+    } else if (availableColors["Pink"] && random === 6) {
       SelectColor("Pink");
-    } else if (availableColors["Purple"]) {
-      SelectColor("Purple");
-    } else if (availableColors["Silver"]) {
-      SelectColor("Silver");
-    } else if (availableColors["Black"]) {
-      SelectColor("Black");
-    } else {
+     } else {
       SelectColor("LightBlue");
     }
   }

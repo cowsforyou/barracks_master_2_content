@@ -25,19 +25,28 @@
 				<Label class="SelectionTitle" text="Color" />
 				<Panel class="ColorSelectorParent">
 					<Panel class="ColorSelectorContainer">
+						<Button id="SelectColorRandom" class="SelectColorButton" onactivate="SelectColor('Random')">
+							<Label style="horizontal-align: center; vertical-align: center; text-align: center; " text="?" />
+						</Button>
 						<Button id="SelectColorGold" class="SelectColorButton" onactivate="SelectColor('Gold')" />
 						<Button id="SelectColorRed" class="SelectColorButton" onactivate="SelectColor('Red')" />
 						<Button id="SelectColorBlue" class="SelectColorButton" onactivate="SelectColor('Blue')" />
 						<Button id="SelectColorLightGreen" class="SelectColorButton" onactivate="SelectColor('LightGreen')" />
-						<Button id="SelectColorPurple" class="SelectColorButton disabledButtons" />
-						<Button id="SelectColorBlack" class="SelectColorButton disabledButtons"/>
+						<Button id="SelectColorPurple" class="SelectColorButton disabledButtons lockedButtons">
+							<Label id="LockedPurpleDescription" text="LOCKED" />
+						</Button>
 					</Panel>
 					<Panel class="ColorSelectorContainer">
 						<Button id="SelectColorGreen" class="SelectColorButton" onactivate="SelectColor('Green')" />
 						<Button id="SelectColorYellow" class="SelectColorButton" onactivate="SelectColor('Yellow')" />
 						<Button id="SelectColorPink" class="SelectColorButton" onactivate="SelectColor('Pink')" />
 						<Button id="SelectColorLightBlue" class="SelectColorButton" onactivate="SelectColor('LightBlue')" />
-						<Button id="SelectColorSilver" class="SelectColorButton disabledButtons" />
+						<Button id="SelectColorSilver" class="SelectColorButton disabledButtons lockedButtons">
+							<Label id="LockedSilverDescription" text="LOCKED" />
+						</Button>
+						<Button id="SelectColorBlack" class="SelectColorButton disabledButtons lockedButtons">
+							<Label id="LockedBlackDescription" text="LOCKED" />
+						</Button>
 					</Panel>
 				</Panel>
 			</Panel>
@@ -48,10 +57,12 @@
 					<Button id="SelectXoyaFaction" class="PreviewFactionButton" onactivate="SwitchToHeroPreview('npc_dota_hero_nevermore')" />
 				</Panel>
 				<DOTAScenePanel id="HeroPreview" particleonly="false" class="RandomFactionPreview" unit="random" />
-				<Label style="horizontal-align: center; vertical-align: center; margin-top: 20px;" text="Random" />
+				<Label id="DefaultFactionSelection" style="horizontal-align: center; vertical-align: center; margin-top: 20px;" text="Random" />
+				<Label id="BuilderInfo" style="horizontal-align: center; text-align: center; margin-top: 10px;" text="#bm_random_lore" />
 			</Panel>
 			<Panel id="CustomisationSelector">
 				<Label id="CustomiseTitle" class="SelectionTitle" text="Customise" />
+				<Label class="CustomiseDescription" text="COMING SOON" />
 			</Panel>
 		</Panel>
 
@@ -59,8 +70,8 @@
 		<Panel id="GameInfoContainer" class="GameInfoContainer">
 			<Panel id="Map" />
 			<Panel class="MapInfoContainer">
-				<Label class="MapInfoContainer" text="BM2 Legacy" />
-				<Label class="MapInfoContainer" text="2 v 2" />
+				<Label id="MapInfoMapName" class="MapInfoContainer" text="Loading Map Name" />
+				<Label id="MapInfoMaxPlayers" class="MapInfoContainer" text="Loading Map Description" />
 			</Panel>
 			<Panel class="StartGameContainer">
 				<Panel id="PickTextPanel">
