@@ -6,16 +6,13 @@ function OnLeaderBoardUpdate(data) {
   results.sort(function(a,b) {
       return b.bmPoints - a.bmPoints
   })
-//   $.Msg(JSON.stringify(results));
 
 for (let index = 0; index < results.length; index++) {
     const entry = results[index]; 
-    // file://{resources}/layout/custom_game/modules/leaderboard_entry.xml
-    // Why are we adding in a comment here with the file path?
-    // modular.js load a layout referring to a dynamic file pathing ( MODULE_BASE_PATH + name + ".xml") but resourcecompiler finds xml files to compile using a simple regexp-like match
-    // If we want to refer to layouts dynamically, at the very least we have to reference a static file path somehow (in any file, even in comment)
-    // thanks to ark120202 on ModDota for the insight.
-    var leaderboardEntryPanel = Modular.SpawnLeaderboard($("#BM_Ladder"));
-    leaderboardEntryPanel.SetPlayer(entry.objectId, entry.bmPoints);
-}
+    const rank = index + 1;
+    const steamId = entry.objectId;
+    const bmPoints = entry.bmPoints;
+    let leaderboardEntryPanel = $.CreatePanel( "Panel", $("#BM_Ladder"), "player_root" );
+    leaderboardEntryPanel.BLoadLayoutFromString( '<root><Panel style="flow-children: right; margin-top: 10px; margin-bottom: 10px; horizontal-align: center;"><Panel style="vertical-align: center; width: 20px; margin-left: 10px;"><Label style="horizontal-align: left; color:white; font-size: 16px;" text="' + rank + '" /></Panel><Panel><DOTAAvatarImage steamid="' + steamId + '" style="width: 35px; height: 35px; z-index: 1; horizontal-align: center; margin-right: 10px; margin-left: 5px;" /></Panel><Panel style="vertical-align: center; width: 110px;"><DOTAUserName style="color:white; font-size: 16px;" steamid="' + steamId + '"/></Panel><Panel style="vertical-align: center; horizontal-align: right; text-align: right;"><Label style="color:white; font-size: 16px;" text="' + bmPoints + '" /></Panel></Panel></root>', false, false );
+  }
 }
