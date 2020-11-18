@@ -73,6 +73,13 @@
      return Modular.MakeModule( newPanel );
  }
  
+ Modular.SpawnLeaderboard = function ( parent ) {
+    var newPanel = $.CreatePanel( "Panel", parent, "player_root" );
+    newPanel.BLoadLayout( 'file://{resources}/layout/custom_game/modules/leaderboard_entry.xml', false, false );
+
+    //Wrap into module functionality before returning
+    return Modular.MakeModule( newPanel );
+ }
  /* DefineThis
   * Define the current xml file/scope as a module for future reference and add
   * functionality by extending the module (see Modular.Extend).
