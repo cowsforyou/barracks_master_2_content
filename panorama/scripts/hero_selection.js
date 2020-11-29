@@ -157,62 +157,71 @@ function onPlayerColorConfirmed(data) {
 
 function onGetPlayerPremiumColors(colorData) {
   if (colorData.Purple) {
-    $('#LockedPurpleDescription') && $('#LockedPurpleDescription').DeleteAsync(0);
-    $("#SelectColorPurple") && $("#SelectColorPurple").RemoveClass("disabledPremiumButtons");
+    $("#LockedPurpleDescription") &&
+      $("#LockedPurpleDescription").DeleteAsync(0);
+    $("#SelectColorPurple") &&
+      $("#SelectColorPurple").RemoveClass("disabledPremiumButtons");
     $("#SelectColorPurple").SetPanelEvent("onactivate", function () {
-      SelectColor('Purple');
+      SelectColor("Purple");
     });
   }
 
   if (colorData.Silver) {
-    $('#LockedSilverDescription') && $('#LockedSilverDescription').DeleteAsync(0);
-    $("#SelectColorSilver") && $("#SelectColorSilver").RemoveClass("disabledPremiumButtons");
+    $("#LockedSilverDescription") &&
+      $("#LockedSilverDescription").DeleteAsync(0);
+    $("#SelectColorSilver") &&
+      $("#SelectColorSilver").RemoveClass("disabledPremiumButtons");
     $("#SelectColorSilver").SetPanelEvent("onactivate", function () {
-      SelectColor('Silver');
+      SelectColor("Silver");
     });
   }
 
   if (colorData.Black) {
-    $('#LockedBlackDescription') && $('#LockedBlackDescription').DeleteAsync(0);
-    $("#SelectColorBlack") && $("#SelectColorBlack").RemoveClass("disabledPremiumButtons");
+    $("#LockedBlackDescription") && $("#LockedBlackDescription").DeleteAsync(0);
+    $("#SelectColorBlack") &&
+      $("#SelectColorBlack").RemoveClass("disabledPremiumButtons");
     $("#SelectColorBlack").SetPanelEvent("onactivate", function () {
-      SelectColor('Black');
+      SelectColor("Black");
     });
   }
 
   if (colorData.LightGreen) {
-    $('#LockedBlackDescription') && $('#LockedBlackDescription').DeleteAsync(0);
-    $("#SelectColorLightGreen") && $("#SelectColorLightGreen").RemoveClass("disabledPremiumButtons");
+    $("#LockedBlackDescription") && $("#LockedBlackDescription").DeleteAsync(0);
+    $("#SelectColorLightGreen") &&
+      $("#SelectColorLightGreen").RemoveClass("disabledPremiumButtons");
     $("#SelectColorLightGreen").SetPanelEvent("onactivate", function () {
-      SelectColor('LightGreen');
+      SelectColor("LightGreen");
     });
   }
 
   if (colorData.Blue) {
-    $('#LockedBlueDescription') && $('#LockedBlueDescription').DeleteAsync(0);
-    $("#SelectColorBlue") && $("#SelectColorBlue").RemoveClass("disabledPremiumButtons");
+    $("#LockedBlueDescription") && $("#LockedBlueDescription").DeleteAsync(0);
+    $("#SelectColorBlue") &&
+      $("#SelectColorBlue").RemoveClass("disabledPremiumButtons");
     $("#SelectColorBlue").SetPanelEvent("onactivate", function () {
-      SelectColor('Blue');
+      SelectColor("Blue");
     });
   }
 
   if (colorData.LightBlue) {
-    $('#LockedLightBlueDescription') && $('#LockedLightBlueDescription').DeleteAsync(0);
-    $("#SelectColorLightBlue") && $("#SelectColorLightBlue").RemoveClass("disabledPremiumButtons");
+    $("#LockedLightBlueDescription") &&
+      $("#LockedLightBlueDescription").DeleteAsync(0);
+    $("#SelectColorLightBlue") &&
+      $("#SelectColorLightBlue").RemoveClass("disabledPremiumButtons");
     $("#SelectColorLightBlue").SetPanelEvent("onactivate", function () {
-      SelectColor('LightBlue');
+      SelectColor("LightBlue");
     });
   }
 }
 
 function onGetMapInfo(mapData) {
-  $('#MapInfoMapName').text = mapData.mapName.toUpperCase();
+  $("#MapInfoMapName").text = mapData.mapName.toUpperCase();
   const maxPlayerPerTeam = mapData.maxPlayer / 2;
-  $('#MapInfoMaxPlayers').text = maxPlayerPerTeam + ' VS ' + maxPlayerPerTeam;
-  if (mapData.mapName === 'bm2_legacy') {
-    $('#Map').AddClass('MapLegacy');
-  } else if (mapData.mapName === 'bm2_mexican_standoff') {
-    $('#Map').AddClass('MapMexicanStandOff');
+  $("#MapInfoMaxPlayers").text = maxPlayerPerTeam + " VS " + maxPlayerPerTeam;
+  if (mapData.mapName === "bm2_legacy") {
+    $("#Map").AddClass("MapLegacy");
+  } else if (mapData.mapName === "bm2_mexican_standoff") {
+    $("#Map").AddClass("MapMexicanStandOff");
   }
 }
 /* Functionality
@@ -262,11 +271,7 @@ function SwitchToHeroPreview(heroName) {
     "HeroPreview"
   );
 
-  var textPanel = $.CreatePanel(
-    "Label",
-    $("#FactionSelector"),
-    "BuilderInfo"
-  );
+  var textPanel = $.CreatePanel("Label", $("#FactionSelector"), "BuilderInfo");
 
   let factionNamePreview;
   let factionDescriptionHash;
@@ -292,7 +297,9 @@ function SwitchToHeroPreview(heroName) {
   }
 
   textPanel.BLoadLayoutFromString(
-    '<root><Label style="horizontal-align: center; text-align: center; margin-top: 10px;" text="' + factionDescriptionHash + '" /></root>',
+    '<root><Label style="horizontal-align: center; text-align: center; margin-top: 10px;" text="' +
+      factionDescriptionHash +
+      '" /></root>',
     false,
     false
   );
@@ -306,7 +313,7 @@ function SwitchToHeroPreview(heroName) {
     false
   );
   $("#FactionSelector").MoveChildAfter(previewPanel, $("#FactionIcon"));
-  $('#DefaultFactionSelection') && $('#DefaultFactionSelection').DeleteAsync(0);
+  $("#DefaultFactionSelection") && $("#DefaultFactionSelection").DeleteAsync(0);
 
   //Send the hero preview to the server
   GameEvents.SendCustomGameEventToServer("hero_preview", {
@@ -337,8 +344,7 @@ function SelectHero() {
   });
   $("#ReadyBtnTxt").text = "Waiting for others";
 
-  $("#SelectColorGold") &&
-    $("#SelectColorGold").AddClass("disabledButtons");
+  $("#SelectColorGold") && $("#SelectColorGold").AddClass("disabledButtons");
   $("#SelectColorGold").SetPanelEvent("onactivate", function () {
     $.Msg("disabled");
   });
@@ -346,8 +352,7 @@ function SelectHero() {
   $("#SelectColorRed").SetPanelEvent("onactivate", function () {
     $.Msg("disabled");
   });
-  $("#SelectColorBlue") &&
-    $("#SelectColorBlue").AddClass("disabledButtons");
+  $("#SelectColorBlue") && $("#SelectColorBlue").AddClass("disabledButtons");
   $("#SelectColorBlue").SetPanelEvent("onactivate", function () {
     $.Msg("disabled");
   });
@@ -356,8 +361,7 @@ function SelectHero() {
   $("#SelectColorLightGreen").SetPanelEvent("onactivate", function () {
     $.Msg("disabled");
   });
-  $("#SelectColorGreen") &&
-    $("#SelectColorGreen").AddClass("disabledButtons");
+  $("#SelectColorGreen") && $("#SelectColorGreen").AddClass("disabledButtons");
   $("#SelectColorGreen").SetPanelEvent("onactivate", function () {
     $.Msg("disabled");
   });
@@ -370,15 +374,18 @@ function SelectHero() {
   $("#SelectColorPink").SetPanelEvent("onactivate", function () {
     $.Msg("disabled");
   });
-  $("#SelectColorLightBlue") && $("#SelectColorLightBlue").AddClass("disabledButtons");
+  $("#SelectColorLightBlue") &&
+    $("#SelectColorLightBlue").AddClass("disabledButtons");
   $("#SelectColorLightBlue").SetPanelEvent("onactivate", function () {
     $.Msg("disabled");
   });
-  $("#SelectColorSilver") && $("#SelectColorSilver").AddClass("disabledButtons");
+  $("#SelectColorSilver") &&
+    $("#SelectColorSilver").AddClass("disabledButtons");
   $("#SelectColorSilver").SetPanelEvent("onactivate", function () {
     $.Msg("disabled");
   });
-  $("#SelectColorPurple") && $("#SelectColorPurple").AddClass("disabledButtons");
+  $("#SelectColorPurple") &&
+    $("#SelectColorPurple").AddClass("disabledButtons");
   $("#SelectColorPurple").SetPanelEvent("onactivate", function () {
     $.Msg("disabled");
   });
@@ -386,7 +393,8 @@ function SelectHero() {
   $("#SelectColorBlack").SetPanelEvent("onactivate", function () {
     $.Msg("disabled");
   });
-  $("#SelectColorRandom") && $("#SelectColorRandom").AddClass("disabledButtons");
+  $("#SelectColorRandom") &&
+    $("#SelectColorRandom").AddClass("disabledButtons");
   $("#SelectColorRandom").SetPanelEvent("onactivate", function () {
     $.Msg("disabled");
   });
@@ -428,6 +436,11 @@ function SelectHero() {
 
 /* Enter the game by removing the picking screen, called when the timer runs to 0 */
 function EnterGame() {
+  RemoveHeroSelectionElements();
+  GameEvents.SendCustomGameEventToServer("set_player_color_unselected", {});
+}
+
+function RemoveHeroSelectionElements() {
   //Hide Hero Selection Panel
   const mainHeroSelectionPanel = $.GetContextPanel()
     .FindChildTraverse("GameInfoContainer")
@@ -463,8 +476,6 @@ function EnterGame() {
 
   //Show Pause Game element
   PauseInfo.style.opacity = 1;
-
-  GameEvents.SendCustomGameEventToServer("set_player_color_unselected", {});
 }
 
 function SelectColor(color) {
@@ -485,7 +496,7 @@ function SelectColor(color) {
   var spectator = localTeam == -1;
 
   if (spectator) {
-      return;
+    return RemoveHeroSelectionElements();
   }
 
   //Hide scoreboard screen
