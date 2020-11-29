@@ -480,6 +480,14 @@ function SelectColor(color) {
 /* Initialisation - runs when the element is created
 =========================================================================*/
 (function () {
+  var localInfo = Game.GetPlayerInfo(Game.GetLocalPlayerID()) || {};
+  var localTeam = localInfo.player_team_id || -1;
+  var spectator = localTeam == -1;
+
+  if (spectator) {
+      return;
+  }
+
   //Hide scoreboard screen
   scoreBoardScreen.style.opacity = 0;
 
