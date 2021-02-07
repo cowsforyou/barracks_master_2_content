@@ -115,8 +115,8 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
         //var test = $("#_dynamic_player_0")
         //$.Msg("player0:"+test)
 
-        var cs = CustomNetTables.GetTableValue("scores", playerId)["cs"]
-        var netWorth = CustomNetTables.GetTableValue("scores", playerId)["netWorth"]
+        var cs = CustomNetTables.GetTableValue("scores", playerId) && CustomNetTables.GetTableValue("scores", playerId)["cs"]
+        var netWorth = CustomNetTables.GetTableValue("scores", playerId) && CustomNetTables.GetTableValue("scores", playerId)["netWorth"]
         var colorData = CustomNetTables.GetTableValue('selected_player_colors', playerId)
         let colorPanel = playerPanel.FindChildInLayoutFile( "ColorContainer" )
         colorPanel && colorData && colorPanel.AddClass(colorData["color"])
