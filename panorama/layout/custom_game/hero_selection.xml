@@ -25,11 +25,11 @@
 				<Label class="SelectionTitle" text="Color" />
 				<Panel class="ColorSelectorParent">
 					<Panel class="ColorSelectorContainer">
-						<Button id="SelectColorRandom" class="SelectColorButton" onactivate="SelectColor('Random')">
+						<RadioButton id="SelectColorRandom" class="SelectColorButton" group="SelectColorRadio" onactivate="SelectColor('Random')">
 							<Label style="horizontal-align: center; vertical-align: center; text-align: center; " text="?" />
-						</Button>
-						<Button id="SelectColorGold" class="SelectColorButton" onactivate="SelectColor('Gold')" />
-						<Button id="SelectColorRed" class="SelectColorButton" onactivate="SelectColor('Red')" />
+						</RadioButton>
+						<RadioButton id="SelectColorGold" class="SelectColorButton" group="SelectColorRadio" onactivate="SelectColor('Gold')" />
+						<RadioButton id="SelectColorRed" class="SelectColorButton" group="SelectColorRadio" onactivate="SelectColor('Red')" />
 						<Button id="SelectColorBlue" class="SelectColorButton lockedButtons disabledPremiumButtons">
 							<Label id="LockedBlueDescription" text="LOCKED" />
 						</Button>
@@ -41,9 +41,9 @@
 						</Button>
 					</Panel>
 					<Panel class="ColorSelectorContainer">
-						<Button id="SelectColorGreen" class="SelectColorButton" onactivate="SelectColor('Green')" />
-						<Button id="SelectColorYellow" class="SelectColorButton" onactivate="SelectColor('Yellow')" />
-						<Button id="SelectColorPink" class="SelectColorButton" onactivate="SelectColor('Pink')" />
+						<RadioButton id="SelectColorGreen" class="SelectColorButton" group="SelectColorRadio" onactivate="SelectColor('Green')" />
+						<RadioButton id="SelectColorYellow" class="SelectColorButton" group="SelectColorRadio" onactivate="SelectColor('Yellow')" />
+						<RadioButton id="SelectColorPink" class="SelectColorButton" group="SelectColorRadio" onactivate="SelectColor('Pink')" />
 						<Button id="SelectColorLightBlue" class="SelectColorButton lockedButtons disabledPremiumButtons">
 							<Label id="LockedLightBlueDescription" text="LOCKED" />
 						</Button>
@@ -57,18 +57,28 @@
 				</Panel>
 			</Panel>
 			<Panel id="FactionSelector">
+				<Label id="FactionTitle" class="SelectionTitle" text="Faction Selector" />
 				<Panel id="FactionIcon">
-					<Button id="SelectRandomFaction" class="PreviewFactionButton" onactivate="SwitchToHeroPreview('npc_dota_hero_error')" />
-					<Button id="SelectLingFaction" class="PreviewFactionButton" onactivate="SwitchToHeroPreview('npc_dota_hero_keeper_of_the_light')" />
-					<Button id="SelectXoyaFaction" class="PreviewFactionButton" onactivate="SwitchToHeroPreview('npc_dota_hero_nevermore')" />
+					<RadioButton id="SelectRandomFaction" class="PreviewFactionButton" group="SelectFactionRadio" onactivate="SwitchToHeroPreview('npc_dota_hero_error')" />
+					<RadioButton id="SelectLingFaction" class="PreviewFactionButton" group="SelectFactionRadio" onactivate="SwitchToHeroPreview('npc_dota_hero_keeper_of_the_light')" />
+					<RadioButton id="SelectXoyaFaction" class="PreviewFactionButton" group="SelectFactionRadio" onactivate="SwitchToHeroPreview('npc_dota_hero_nevermore')" />
 				</Panel>
+
+				<Label id="PerkTitle" class="PerkSelectionTitle" text="Perk Selector" />
+				<Panel id="PerkIcon">
+					<RadioButton id="SelectRangePerk" class="PreviewPerkButton" group="SelectPerkRadio"  onactivate="SelectPerk( 'perk_range' )"/>
+					<RadioButton id="SelectDamagePerk" class="PreviewPerkButton" group="SelectPerkRadio" onactivate="SelectPerk( 'perk_damage' )" />
+					<RadioButton id="SelectHealthPerk" class="PreviewPerkButton" group="SelectPerkRadio" onactivate="SelectPerk( 'perk_health' )" />
+				</Panel>
+
+				<Label id="CustomisationTitle" class="PerkSelectionTitle" text="Customization" />
+				<Label class="CustomiseDescription" text="COMING SOON" />
+			</Panel>
+			<Panel id="CustomisationSelector">
+				<Label id="HeroTitle" class="SelectionTitle" text="Hero Preview" />
 				<DOTAScenePanel id="HeroPreview" particleonly="false" class="RandomFactionPreview" unit="random" />
 				<Label id="DefaultFactionSelection" style="horizontal-align: center; vertical-align: center; margin-top: 20px;" text="Random" />
 				<Label id="BuilderInfo" style="horizontal-align: center; text-align: center; margin-top: 10px;" text="#bm_random_lore" />
-			</Panel>
-			<Panel id="CustomisationSelector">
-				<Label id="CustomiseTitle" class="SelectionTitle" text="Customise" />
-				<Label class="CustomiseDescription" text="COMING SOON" />
 			</Panel>
 		</Panel>
 

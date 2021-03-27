@@ -39,12 +39,12 @@
 }
 
 .MapLegacy {
-  background-image: url(file://{images}/custom_game/pregame_screen/bm2_legacy_minimap.png);
+  background-image: url("file://{images}/custom_game/pregame_screen/bm2_legacy_minimap.png");
 
 }
 
 .MapMexicanStandOff {
-  background-image: url(file://{images}/custom_game/pregame_screen/bm2_mexican_standoff_minimap.png);
+  background-image: url("file://{images}/custom_game/pregame_screen/bm2_mexican_standoff_minimap.png");
 }
 
 .MapInfoContainer {
@@ -87,6 +87,13 @@
   margin-bottom: 20px;
 }
 
+.PerkSelectionTitle {
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
 .CustomiseDescription {
   width: 100%;
   text-align: center;
@@ -103,6 +110,11 @@
 }
 
 #FactionIcon {
+  flow-children: right;
+  horizontal-align: center;
+}
+
+#PerkIcon {
   flow-children: right;
   horizontal-align: center;
 }
@@ -175,32 +187,60 @@
   height: 60px;
   width: 60px;
   margin: 0px 10px 0px 10px;
-  box-shadow: fill rgba(0, 0, 0, 0.4) -4px -4px 8px 8px;
+  box-shadow: fill rgba(0, 0, 0, 0.4) 0px 0px 4px 4px;
 }
 
-.PreviewFactionButton:hover {
-  box-shadow: fill rgba(215, 138, 5, 0.75) -4px -4px 8px 8px;
+.PreviewFactionButton:hover, .PreviewFactionButton:selected {
+  box-shadow: fill rgba(215, 138, 5, 0.75) 0px 0px 4px 4px;
 }
 
 #SelectLingFaction {
-  background-image: url(file://{images}/custom_game/pregame_screen/ling.png);
+  background-image: url("file://{images}/custom_game/pregame_screen/ling.png");
 }
 
 #SelectXoyaFaction {
-  background-image: url(file://{images}/custom_game/pregame_screen/xoya.png);
+  background-image: url("file://{images}/custom_game/pregame_screen/xoya.png");
 }
 
 #SelectRandomFaction {
-  background-image: url(file://{images}/custom_game/pregame_screen/question_mark.png);
+  background-image: url("file://{images}/custom_game/pregame_screen/question_mark.png");
 }
 
 .RandomFactionPreview {
   width: 330px;
   height: 330px;
   margin-top: 20px;
-  opacity-mask: url("s2r://panorama/images/masks/softedge_box_png.vtex");
+  /* opacity-mask: url("s2r://panorama/images/masks/softedge_box_png.vtex"); */
   horizontal-align: center;
 }
+
+/* ''Perk Selection button
+=================================================================*/
+.PreviewPerkButton {
+  horizontal-align: center;
+  background-size: 100% 100%;
+  height: 60px;
+  width: 60px;
+  margin: 0px 10px 0px 10px;
+  box-shadow: fill rgba(0, 0, 0, 0.4) 0px 0px 4px 4px;
+}
+
+.PreviewPerkButton:hover, .PreviewPerkButton:selected {
+  box-shadow: fill rgba(215, 138, 5, 0.75) 0px 0px 4px 4px;
+}
+
+#SelectRangePerk {
+  background-image: url("file://{images}/custom_game/pregame_screen/perk_range.png");
+}
+
+#SelectDamagePerk {
+  background-image: url("file://{images}/custom_game/pregame_screen/perk_damage.png");
+}
+
+#SelectHealthPerk {
+  background-image: url("file://{images}/custom_game/pregame_screen/perk_health.png");
+}
+
 
 /* 'Select Color' button
 =================================================================*/
@@ -210,11 +250,11 @@
   height: 50px;
   width: 100%;
   margin: 5px 1px 10px 1px;
-  box-shadow: fill rgba(0, 0, 0, 0.4) -4px -4px 8px 8px;
+  box-shadow: fill rgba(0, 0, 0, 0.4) 0px 0px 4px 4px;
 }
 
-.SelectColorButton:hover {
-  box-shadow: fill rgba(215, 138, 5, 0.75) -4px -4px 8px 8px;
+.SelectColorButton:hover, .SelectColorButton:selected {
+  box-shadow: fill rgba(215, 138, 5, 0.75) 0px 0px 4px 4px;
 }
 
 .disabledButtons,
@@ -313,7 +353,7 @@
   width: 330px;
   height: 330px;
   margin-top: 20px;
-  opacity-mask: url("s2r://panorama/images/masks/softedge_box_png.vtex");
+  /* opacity-mask: url("s2r://panorama/images/masks/softedge_box_png.vtex"); */
   horizontal-align: center;
 }
 
@@ -321,7 +361,7 @@
 =================================================================*/
 #ReadyBtn {
   horizontal-align: center;
-  box-shadow: fill #00000066 -4px -4px 8px 8px;
+  box-shadow: fill #00000066 0px 0px 4px 4px;
   background-color: gradient(
     linear,
     0% 0%,
@@ -329,7 +369,7 @@
     from(#5aa15e),
     to(#87d69533)
   );
-  background-image: url("s2r://panorama/images/backgrounds/background_play_button_large_2x_png.vtex");
+  /* background-image: url("s2r://panorama/images/backgrounds/background_play_button_large_2x_png.vtex"); */
   background-size: 100% 100%;
   height: 55px;
   width: 420px;
@@ -376,7 +416,7 @@
     from(#5aa15e),
     to(#87d69533)
   );
-  background-image: url("s2r://panorama/images/backgrounds/background_play_button_large_2x_png.vtex");
+  /* background-image: url("s2r://panorama/images/backgrounds/background_play_button_large_2x_png.vtex"); */
   background-size: 100% 100%;
   height: 55px;
   width: 100%;

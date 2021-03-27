@@ -267,11 +267,11 @@ function SwitchToHeroPreview(heroName) {
 
   var previewPanel = $.CreatePanel(
     "Panel",
-    $("#FactionSelector"),
+    $("#CustomisationSelector"),
     "HeroPreview"
   );
 
-  var textPanel = $.CreatePanel("Label", $("#FactionSelector"), "BuilderInfo");
+  var textPanel = $.CreatePanel("Label", $("#CustomisationSelector"), "BuilderInfo");
 
   let factionNamePreview;
   let factionDescriptionHash;
@@ -312,12 +312,19 @@ function SwitchToHeroPreview(heroName) {
     false,
     false
   );
-  $("#FactionSelector").MoveChildAfter(previewPanel, $("#FactionIcon"));
+  $("#CustomisationSelector").MoveChildAfter(previewPanel, $("#HeroTitle"));
   $("#DefaultFactionSelection") && $("#DefaultFactionSelection").DeleteAsync(0);
 
   //Send the hero preview to the server
   GameEvents.SendCustomGameEventToServer("hero_preview", {
     HeroName: factionNamePreview,
+  });
+}
+
+/* Set the perk for the player */
+function SelectPerk(perk) {
+  GameEvents.SendCustomGameEventToServer("perk_selected", {
+   perk,
   });
 }
 
@@ -413,7 +420,21 @@ function SelectHero() {
   $("#SelectRandomFaction").SetPanelEvent("onactivate", function () {
     $.Msg("disabled");
   });
-
+  $("#SelectHealthPerk") &&
+    $("#SelectHealthPerk").AddClass("disabledButtons");
+  $("#SelectHealthPerk").SetPanelEvent("onactivate", function () {
+    $.Msg("disabled");
+  });
+  $("#SelectDamagePerk") &&
+  $("#SelectDamagePerk").AddClass("disabledButtons");
+$("#SelectDamagePerk").SetPanelEvent("onactivate", function () {
+  $.Msg("disabled");
+});
+$("#SelectRangePerk") &&
+$("#SelectRangePerk").AddClass("disabledButtons");
+$("#SelectRangePerk").SetPanelEvent("onactivate", function () {
+$.Msg("disabled");
+});
   if (selectedColor.length === 0 || selectedColor === "Random") {
     const random = Math.round(Math.random() * 5);
 
