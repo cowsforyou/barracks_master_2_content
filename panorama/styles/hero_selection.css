@@ -103,7 +103,7 @@
 #FactionSelector {
   flow-children: down;
   text-align: center;
-  width: 33%;
+  width: 25%;
   font-size: 30px;
   horizontal-align: center;
   text-align: center;
@@ -125,9 +125,30 @@
   margin-bottom: 5%;
 }
 
+.InformationPreviewContainer {
+  flow-children: down;
+  width: 34%;
+  font-size: 30px;
+  horizontal-align: center;
+  text-align: center;
+}
+
+#InformationPreview {
+  width: 100%;
+  font-size: 30px;
+  horizontal-align: center;
+  text-align: center;
+}
+
+.InformationTitle {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .ColorSelector {
   flow-children: down;
-  width: 33%;
+  width: 10%;
   font-size: 30px;
   horizontal-align: center;
   text-align: center;
@@ -146,7 +167,7 @@
 
 #CustomisationSelector {
   flow-children: down;
-  width: 33%;
+  width: 30%;
   height: 100%;
   font-size: 30px;
   horizontal-align: center;

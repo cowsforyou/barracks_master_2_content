@@ -253,6 +253,9 @@ function LoadPlayers() {
     //Save the panel for later
     playerPanels[player] = playerPanel;
   });
+
+  var statPanel = Modular.Spawn("player_stats", $("#InformationPreview"));
+  statPanel.SetPlayer(Game.GetLocalPlayerID());
 }
 
 /* A player has picked a hero, update the status screen. */

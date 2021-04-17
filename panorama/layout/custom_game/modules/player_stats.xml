@@ -1,0 +1,37 @@
+<root>
+	<scripts>
+		<include src="file://{resources}/scripts/modular.js" />
+	</scripts>
+
+	<styles>
+		<include src="file://{resources}/styles/modules/player_stats.css" />
+	</styles>
+
+	<script>
+		//Module definition
+		Modular.DefineThis({
+
+			//Set the player for this avatar
+			SetPlayer : function( playerID ) {
+				var playerInfo = Game.GetPlayerInfo( playerID );
+				$('#PlayerStatsAvatar').steamid = playerInfo.player_steamid;
+				$('#PlayerStatsName').text = playerInfo.player_name;
+			},
+
+		});
+	</script>
+
+	<Panel class="PlayerStats">
+		<Panel class="PlayerStatsNameContainer">
+			<DOTAAvatarImage id="PlayerStatsAvatar" />
+			<Label id='PlayerStatsName' class="PlayerNameContainer" text="Loading Player Name" />
+		</Panel>
+		<Label id='PlayerRating' text="Rating: Calibrating" />
+		<Label id='PlayerSeasonRank' text="Season Rank: Calibrating" />
+		<Label id='PlayerGamesPlayed' text="Games Player: Calibrating" />
+		<Label id='PlayerGamesWon' text="Games Won: Calibrating" />
+		<Label id='PlayerWinRate' text="Win %: Calibrating" />
+		<Label id='PlayerFavoriteColor' text="Favourite Color: Calibrating" />
+		<Label id='PlayerMostPlayedFaction' text="Most Played Faction: Calibrating" />
+	</Panel>
+</root>

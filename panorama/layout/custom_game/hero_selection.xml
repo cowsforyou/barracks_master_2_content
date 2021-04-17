@@ -21,6 +21,11 @@
 
 		<!-- Selection Container -->
 		<Panel id="SelectionContainer" class="SelectionContainer">
+			<Panel class="InformationPreviewContainer">
+			<Panel id="InformationPreview">
+				<Label id="InformationTitleText" class="InformationTitle" text="Player Stats" />
+			</Panel>
+			</Panel>
 			<Panel class="ColorSelector">
 				<Label class="SelectionTitle" text="Color" />
 				<Panel class="ColorSelectorParent">

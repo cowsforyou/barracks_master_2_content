@@ -1,0 +1,30 @@
+.PlayerStats {
+  flow-children: down;
+  margin-top: 20%;
+  margin-bottom: 0px;
+  vertical-align: center;
+}
+
+.PlayerStatsNameContainer {
+  flow-children: right;
+  margin-bottom: 20px;
+}
+
+.PlayerStats .PlayerNameContainer {
+	margin-top: 25px;
+	margin-left: 10px;
+	font-size: 28px;
+}
+
+.PlayerStats Label {
+  horizontal-align: left;
+  font-size: 18px;
+  margin: 3px;
+}
+
+#PlayerStatsAvatar {
+  width: 80px;
+  height: 80px;
+  z-index: 1;
+  horizontal-align: left;
+}
