@@ -323,7 +323,6 @@ function SwitchToHeroPreview(heroName) {
     false,
     false
   );
-  $("#CustomisationSelector").MoveChildAfter(previewPanel, $("#HeroTitle"));
   $("#DefaultFactionSelection") && $("#DefaultFactionSelection").DeleteAsync(0);
 
   //Send the hero preview to the server

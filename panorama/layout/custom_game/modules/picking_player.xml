@@ -15,7 +15,6 @@
 			SetPlayer : function( playerID ) {
 				var pID = playerID;
 				var playerInfo = Game.GetPlayerInfo( playerID );
-				$('#PlayerAvatar').steamid = playerInfo.player_steamid;
 				$('#PlayerName').text = playerInfo.player_name;
 			},
 
@@ -36,7 +35,13 @@
 			//Set the hero of the player, then set the transform to none,
 			//which animates the hero portrait panel
 			SetHero : function( heroName ) {
-				$('#HeroPanelFaction').text = heroName;
+				if (heroName === "Random") {
+					$('#HeroFactionAvatar').SetImage("file://{images}/custom_game/pregame_screen/question_mark.png");
+				} else if (heroName === "Ling") {
+					$('#HeroFactionAvatar').SetImage("file://{images}/custom_game/pregame_screen/ling.png");
+				} else {
+					$('#HeroFactionAvatar').SetImage("file://{images}/custom_game/pregame_screen/xoya.png");
+				}
 			},
 
 			//Set the color of the players team
@@ -51,7 +56,7 @@
 					break;
 				}
 
-				$('#HeroPanelColor').text = displayColor;
+				$('#HeroColorContainer').style.backgroundColor = color
 			},
 
 			//Set the color of the players team
@@ -67,11 +72,10 @@
 	</script>
 
 	<Panel class="PickingPlayer">
-		<DOTAAvatarImage id="PlayerAvatar" class="AvatarImg" />
+	<Panel id="HeroColorContainer">
+		<Image id="HeroFactionAvatar" src="file://{images}/custom_game/pregame_screen/question_mark.png"/>
+		</Panel>
 		<Label id='PlayerName' text="?" />
-		<Label text="Calibrating" />
-		<Label id='HeroPanelColor' text='?' />
-		<Label id='HeroPanelFaction' text='?' />
 		<Label id='HeroPanelTeam' text='?'/>
 		<Label id='HeroPanelStatus' text='Waiting' />
 		<Panel id="HeroPanel" />
