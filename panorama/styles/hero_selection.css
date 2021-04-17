@@ -258,9 +258,14 @@
 }
 
 .disabledButtons,
-.disabledButtons:hover {
+.disabledButtons:hover, .disabledButtons:selected {
   box-shadow: none;
   opacity: 0.1;
+}
+
+.PreviewButtonSelected, .PreviewButtonSelected:hover, .PreviewButtonSelected:selected {
+  opacity: 0.1;
+  box-shadow: fill rgba(215, 138, 5, 0.1) 0px 0px 4px 4px;
 }
 
 .disabledPremiumButtons,

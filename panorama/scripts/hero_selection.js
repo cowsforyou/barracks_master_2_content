@@ -10,6 +10,7 @@ var playerPanels = {};
 let selectedHero = "";
 let clickedReady = false;
 let selectedColor = "";
+let selectedPerk = "";
 let availableColors = {
   Gold: true,
   Red: true,
@@ -271,7 +272,11 @@ function SwitchToHeroPreview(heroName) {
     "HeroPreview"
   );
 
-  var textPanel = $.CreatePanel("Label", $("#CustomisationSelector"), "BuilderInfo");
+  var textPanel = $.CreatePanel(
+    "Label",
+    $("#CustomisationSelector"),
+    "BuilderInfo"
+  );
 
   let factionNamePreview;
   let factionDescriptionHash;
@@ -323,8 +328,10 @@ function SwitchToHeroPreview(heroName) {
 
 /* Set the perk for the player */
 function SelectPerk(perk) {
+  selectedPerk = perk;
+
   GameEvents.SendCustomGameEventToServer("perk_selected", {
-   perk,
+    perk,
   });
 }
 
@@ -420,21 +427,82 @@ function SelectHero() {
   $("#SelectRandomFaction").SetPanelEvent("onactivate", function () {
     $.Msg("disabled");
   });
+  $("#SelectHealthPerk") && $("#SelectHealthPerk").AddClass("disabledButtons");
   $("#SelectHealthPerk") &&
-    $("#SelectHealthPerk").AddClass("disabledButtons");
-  $("#SelectHealthPerk").SetPanelEvent("onactivate", function () {
-    $.Msg("disabled");
-  });
+    $("#SelectHealthPerk").SetPanelEvent("onactivate", function () {
+      $.Msg("disabled");
+    });
+  $("#SelectDamagePerk") && $("#SelectDamagePerk").AddClass("disabledButtons");
   $("#SelectDamagePerk") &&
-  $("#SelectDamagePerk").AddClass("disabledButtons");
-$("#SelectDamagePerk").SetPanelEvent("onactivate", function () {
-  $.Msg("disabled");
-});
-$("#SelectRangePerk") &&
-$("#SelectRangePerk").AddClass("disabledButtons");
-$("#SelectRangePerk").SetPanelEvent("onactivate", function () {
-$.Msg("disabled");
-});
+    $("#SelectDamagePerk").SetPanelEvent("onactivate", function () {
+      $.Msg("disabled");
+    });
+  $("#SelectRangePerk") && $("#SelectRangePerk").AddClass("disabledButtons");
+  $("#SelectRangePerk") &&
+    $("#SelectRangePerk").SetPanelEvent("onactivate", function () {
+      $.Msg("disabled");
+    });
+
+  if (selectedPerk === "perk_health") {
+    $("#SelectHealthPerk") &&
+      $("#SelectHealthPerk").AddClass("PreviewButtonSelected");
+  } else if (selectedPerk === "perk_damage") {
+    $("#SelectDamagePerk") &&
+      $("#SelectDamagePerk").AddClass("PreviewButtonSelected");
+  } else {
+    $("#SelectRangePerk") &&
+      $("#SelectRangePerk").AddClass("PreviewButtonSelected");
+  }
+
+  if (selectedHero === "npc_dota_hero_keeper_of_the_light") {
+    $("#SelectLingFaction") &&
+      $("#SelectLingFaction").AddClass("PreviewButtonSelected");
+  } else if (selectedHero === "npc_dota_hero_nevermore") {
+    $("#SelectXoyaFaction") &&
+      $("#SelectXoyaFaction").AddClass("PreviewButtonSelected");
+  } else {
+    $("#SelectRandomFaction") &&
+      $("#SelectRandomFaction").AddClass("PreviewButtonSelected");
+  }
+
+  if (selectedColor === "Gold") {
+    $("#SelectColorGold") &&
+      $("#SelectColorGold").AddClass("PreviewButtonSelected");
+  } else if (selectedColor === "Red") {
+    $("#SelectColorRed") &&
+      $("#SelectColorRed").AddClass("PreviewButtonSelected");
+  } else if (selectedColor === "Blue") {
+    $("#SelectColorBlue") &&
+      $("#SelectColorBlue").AddClass("PreviewButtonSelected");
+  } else if (selectedColor === "LightGreen") {
+    $("#SelectColorLightGreen") &&
+      $("#SelectColorLightGreen").AddClass("PreviewButtonSelected");
+  } else if (selectedColor === "Green") {
+    $("#SelectColorGreen") &&
+      $("#SelectColorGreen").AddClass("PreviewButtonSelected");
+  } else if (selectedColor === "Yellow") {
+    $("#SelectColorYellow") &&
+      $("#SelectColorYellow").AddClass("PreviewButtonSelected");
+  } else if (selectedColor === "Pink") {
+    $("#SelectColorPink") &&
+      $("#SelectColorPink").AddClass("PreviewButtonSelected");
+  } else if (selectedColor === "LightBlue") {
+    $("#SelectColorLightBlue") &&
+      $("#SelectColorLightBlue").AddClass("PreviewButtonSelected");
+  } else if (selectedColor === "Silver") {
+    $("#SelectColorSilver") &&
+      $("#SelectColorSilver").AddClass("PreviewButtonSelected");
+  } else if (selectedColor === "Purple") {
+    $("#SelectColorPurple") &&
+      $("#SelectColorPurple").AddClass("PreviewButtonSelected");
+  } else if (selectedColor === "Black") {
+    $("#SelectColorBlack") &&
+      $("#SelectColorBlack").AddClass("PreviewButtonSelected");
+  } else {
+    $("#SelectColorRandom") &&
+      $("#SelectColorRandom").AddClass("PreviewButtonSelected");
+  }
+
   if (selectedColor.length === 0 || selectedColor === "Random") {
     const random = Math.round(Math.random() * 5);
 
