@@ -315,7 +315,7 @@ function SwitchToHeroPreview(heroName) {
     false
   );
   previewPanel.BLoadLayoutFromString(
-    '<root><Panel style="horizontal-align: center; flow-children: down;"><DOTAScenePanel particleonly="false" style="width: 330px; height: 330px; margin-top: 0px; opacity-mask: url(\'s2r://panorama/images/masks/softedge_box_png.vtex\');" unit="' +
+    '<root><Panel style="horizontal-align: center; flow-children: down;"><DOTAScenePanel particleonly="false" style="width: 390px; height: 390px; margin-top: 0px; opacity-mask: url(\'s2r://panorama/images/masks/softedge_box_png.vtex\');" unit="' +
       heroName +
       '" /><Label style="horizontal-align: center; vertical-align: center; margin-top: 10px;" text="' +
       factionNamePreview +
