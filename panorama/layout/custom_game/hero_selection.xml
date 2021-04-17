@@ -68,7 +68,6 @@
 				<Label class="CustomiseDescription" text="COMING SOON" />
 			</Panel>
 			<Panel id="CustomisationSelector">
-				<Label id="HeroTitle" class="SelectionTitle" text="Hero Preview" />
 				<DOTAScenePanel id="HeroPreview" particleonly="false" class="RandomFactionPreview" unit="random" />
 				<Label id="DefaultFactionSelection" style="horizontal-align: center; vertical-align: center; margin-top: 20px;" text="Random" />
 				<Label id="BuilderInfo" style="horizontal-align: center; text-align: center; margin-top: 10px;" text="#bm_random_lore" />
