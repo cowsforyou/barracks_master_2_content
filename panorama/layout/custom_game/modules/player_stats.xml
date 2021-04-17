@@ -26,12 +26,25 @@
 			<DOTAAvatarImage id="PlayerStatsAvatar" />
 			<Label id='PlayerStatsName' class="PlayerNameContainer" text="Loading Player Name" />
 		</Panel>
-		<Label id='PlayerRating' text="Rating: Calibrating" />
-		<Label id='PlayerSeasonRank' text="Season Rank: Calibrating" />
-		<Label id='PlayerGamesPlayed' text="Games Player: Calibrating" />
-		<Label id='PlayerGamesWon' text="Games Won: Calibrating" />
-		<Label id='PlayerWinRate' text="Win %: Calibrating" />
-		<Label id='PlayerFavoriteColor' text="Favourite Color: Calibrating" />
-		<Label id='PlayerMostPlayedFaction' text="Most Played Faction: Calibrating" />
+		<Panel class="PlayerStatsDetailsContainer">
+			<Panel class="PlayerStatsDetailsTitle">
+				<Label text="Rating" />
+				<Label text="Season Rank" />
+				<Label text="Games Player" />
+				<Label text="Games Won" />
+				<Label text="Win %" />
+				<Label text="Favourite Color" />
+				<Label text="Most Played Faction" />
+			</Panel>
+			<Panel class="PlayerStatsDetailsValue">
+				<Label id='PlayerRating' text="Calibrating" />
+				<Label id='PlayerSeasonRank' text="Calibrating" />
+				<Label id='PlayerGamesPlayed' text="Calibrating" />
+				<Label id='PlayerGamesWon' text="Calibrating" />
+				<Label id='PlayerWinRate' text="Calibrating" />
+				<Label id='PlayerFavoriteColor' text="Calibrating" />
+				<Label id='PlayerMostPlayedFaction' text="Calibrating" />
+			</Panel>
+		</Panel>
 	</Panel>
 </root>

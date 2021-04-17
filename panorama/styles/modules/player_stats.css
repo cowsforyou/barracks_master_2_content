@@ -28,3 +28,19 @@
   z-index: 1;
   horizontal-align: left;
 }
+
+.PlayerStatsDetailsContainer {
+	flow-children: right;
+}
+
+.PlayerStatsDetailsTitle {
+	margin-right: 80px;
+}
+
+.PlayerStatsDetailsValue {
+	text-align: left;
+}
+
+.PlayerStatsDetailsTitle, .PlayerStatsDetailsValue {
+	flow-children: down;
+}
