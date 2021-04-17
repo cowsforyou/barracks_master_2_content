@@ -35,29 +35,17 @@
 						</RadioButton>
 						<RadioButton id="SelectColorGold" class="SelectColorButton" group="SelectColorRadio" onactivate="SelectColor('Gold')" />
 						<RadioButton id="SelectColorRed" class="SelectColorButton" group="SelectColorRadio" onactivate="SelectColor('Red')" />
-						<Button id="SelectColorBlue" class="SelectColorButton lockedButtons disabledPremiumButtons">
-							<Label id="LockedBlueDescription" text="LOCKED" />
-						</Button>
-						<Button id="SelectColorLightGreen" class="SelectColorButton lockedButtons disabledPremiumButtons">
-							<Label id="LockedLightGreenDescription" text="LOCKED" />
-						</Button>
-						<Button id="SelectColorPurple" class="SelectColorButton lockedButtons disabledPremiumButtons">
-							<Label id="LockedPurpleDescription" text="LOCKED" />
-						</Button>
+						<RadioButton id="SelectColorBlue" group="SelectColorRadio" class="SelectColorButton lockedButtons disabledPremiumButtons" />
+						<RadioButton id="SelectColorLightGreen" group="SelectColorRadio" class="SelectColorButton lockedButtons disabledPremiumButtons" />
+						<RadioButton id="SelectColorPurple" group="SelectColorRadio" class="SelectColorButton lockedButtons disabledPremiumButtons" />
 					</Panel>
 					<Panel class="ColorSelectorContainer">
 						<RadioButton id="SelectColorGreen" class="SelectColorButton" group="SelectColorRadio" onactivate="SelectColor('Green')" />
 						<RadioButton id="SelectColorYellow" class="SelectColorButton" group="SelectColorRadio" onactivate="SelectColor('Yellow')" />
 						<RadioButton id="SelectColorPink" class="SelectColorButton" group="SelectColorRadio" onactivate="SelectColor('Pink')" />
-						<Button id="SelectColorLightBlue" class="SelectColorButton lockedButtons disabledPremiumButtons">
-							<Label id="LockedLightBlueDescription" text="LOCKED" />
-						</Button>
-						<Button id="SelectColorSilver" class="SelectColorButton lockedButtons disabledPremiumButtons">
-							<Label id="LockedSilverDescription" text="LOCKED" />
-						</Button>
-						<Button id="SelectColorBlack" class="SelectColorButton lockedButtons disabledPremiumButtons">
-							<Label id="LockedBlackDescription" text="LOCKED" />
-						</Button>
+						<RadioButton id="SelectColorLightBlue" group="SelectColorRadio" class="SelectColorButton lockedButtons disabledPremiumButtons" />
+						<RadioButton id="SelectColorSilver" group="SelectColorRadio" class="SelectColorButton lockedButtons disabledPremiumButtons" />
+						<RadioButton id="SelectColorBlack" group="SelectColorRadio" class="SelectColorButton lockedButtons disabledPremiumButtons" />
 					</Panel>
 				</Panel>
 			</Panel>

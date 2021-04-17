@@ -290,15 +290,17 @@
 }
 
 .disabledPremiumButtons,
-.disabledPremiumButtons:hover {
+.disabledPremiumButtons:hover, .disabledPremiumButtons:selected {
   box-shadow: none;
 }
 
-.lockedButtons Label {
-  horizontal-align: center;
-  vertical-align: center;
-  text-align: center;
-  font-size: 20px;
+.lockedButtons, .lockedButtons:hover, .lockedButtons:selected {
+  box-shadow: none;
+}
+
+.lockedButtons {
+  background-image: url("file://{images}/custom_game/pregame_screen/padlock_white.png");
+  background-size: 100%;
 }
 
 /* Premium Colours */

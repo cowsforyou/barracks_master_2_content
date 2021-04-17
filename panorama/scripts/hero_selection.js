@@ -158,57 +158,60 @@ function onPlayerColorConfirmed(data) {
 
 function onGetPlayerPremiumColors(colorData) {
   if (colorData.Purple) {
-    $("#LockedPurpleDescription") &&
-      $("#LockedPurpleDescription").DeleteAsync(0);
     $("#SelectColorPurple") &&
       $("#SelectColorPurple").RemoveClass("disabledPremiumButtons");
+      $("#SelectColorPurple") &&
+      $("#SelectColorPurple").RemoveClass("lockedButtons");
     $("#SelectColorPurple").SetPanelEvent("onactivate", function () {
       SelectColor("Purple");
     });
   }
 
   if (colorData.Silver) {
-    $("#LockedSilverDescription") &&
-      $("#LockedSilverDescription").DeleteAsync(0);
     $("#SelectColorSilver") &&
       $("#SelectColorSilver").RemoveClass("disabledPremiumButtons");
+      $("#SelectColorSilver") &&
+      $("#SelectColorSilver").RemoveClass("lockedButtons");
     $("#SelectColorSilver").SetPanelEvent("onactivate", function () {
       SelectColor("Silver");
     });
   }
 
   if (colorData.Black) {
-    $("#LockedBlackDescription") && $("#LockedBlackDescription").DeleteAsync(0);
     $("#SelectColorBlack") &&
       $("#SelectColorBlack").RemoveClass("disabledPremiumButtons");
+      $("#SelectColorBlack") &&
+      $("#SelectColorBlack").RemoveClass("lockedButtons");
     $("#SelectColorBlack").SetPanelEvent("onactivate", function () {
       SelectColor("Black");
     });
   }
 
   if (colorData.LightGreen) {
-    $("#LockedBlackDescription") && $("#LockedBlackDescription").DeleteAsync(0);
     $("#SelectColorLightGreen") &&
       $("#SelectColorLightGreen").RemoveClass("disabledPremiumButtons");
+      $("#SelectColorLightGreen") &&
+      $("#SelectColorLightGreen").RemoveClass("lockedButtons");
     $("#SelectColorLightGreen").SetPanelEvent("onactivate", function () {
       SelectColor("LightGreen");
     });
   }
 
   if (colorData.Blue) {
-    $("#LockedBlueDescription") && $("#LockedBlueDescription").DeleteAsync(0);
     $("#SelectColorBlue") &&
       $("#SelectColorBlue").RemoveClass("disabledPremiumButtons");
+      $("#SelectColorBlue") &&
+      $("#SelectColorBlue").RemoveClass("lockedButtons");
     $("#SelectColorBlue").SetPanelEvent("onactivate", function () {
       SelectColor("Blue");
     });
   }
 
   if (colorData.LightBlue) {
-    $("#LockedLightBlueDescription") &&
-      $("#LockedLightBlueDescription").DeleteAsync(0);
     $("#SelectColorLightBlue") &&
       $("#SelectColorLightBlue").RemoveClass("disabledPremiumButtons");
+      $("#SelectColorLightBlue") &&
+      $("#SelectColorLightBlue").RemoveClass("lockedButtons");
     $("#SelectColorLightBlue").SetPanelEvent("onactivate", function () {
       SelectColor("LightBlue");
     });
