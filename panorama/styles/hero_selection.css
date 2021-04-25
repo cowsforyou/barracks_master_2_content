@@ -74,11 +74,20 @@
 }
 
 /* Status */
-#Status {
-  horizontal-align: center;
-  vertical-align: center;
+.Status {
+  background-color:rgba(0, 0, 0, 0.6);
   font-size: 40px;
   flow-children: right;
+}
+
+#TeamStatusContainer {
+  flow-children: right;
+  horizontal-align: center;
+}
+
+#Team1Status, #Team2Status {
+  flow-children: right;
+  margin: 0 10px;
 }
 
 /* Selection */

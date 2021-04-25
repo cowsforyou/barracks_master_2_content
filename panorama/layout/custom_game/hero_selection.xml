@@ -16,7 +16,10 @@
 	<Panel hittest="true" class="MainHeroSelectionPanel">
 		<!-- Status Container -->
 		<Panel id="StatusContainer" class="StatusContainer">
-			<Panel id="Status" />
+			<Panel id="TeamStatusContainer">
+				<Panel id="Team1Status" class="Status" />
+				<Panel id="Team2Status" class="Status" />
+			</Panel>
 		</Panel>
 
 		<!-- Selection Container -->
