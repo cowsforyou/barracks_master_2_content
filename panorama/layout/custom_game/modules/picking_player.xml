@@ -48,15 +48,57 @@
 			SetColor : function( color ) {
 				let displayColor = color;
 				switch(color) {
+					case "Gold":
+					displayColor = "Gold";
+					colorHex = "#d78a05";
+					break;
+					case "Red":
+					displayColor = "Red";
+					colorHex = "#800002";
+					break;
+					case "Blue":
+					displayColor = "Blue";
+					colorHex = "#009dc9";
+					break;
 					case "LightGreen":
 					displayColor = "Light Green";
+					colorHex = "#aaffaa";
+					break;
+					case "Green":
+					displayColor = "Green";
+					colorHex = "#00c832";
+					break;
+					case "Yellow":
+					displayColor = "Yellow";
+					colorHex = "#ffff00";
+					break;
+					case "Pink":
+					displayColor = "Pink";
+					colorHex = "#ff7dc8";
 					break;
 					case "LightBlue":
 					displayColor = "Light Blue";
+					colorHex = "#00ffff";
+					break;
+					case "Purple":
+					displayColor = "Purple";
+					colorHex = "#bf00ff";
+					break;
+					case "Silver":
+					displayColor = "Silver";
+					colorHex = "#e1e1e1";
+					break;
+					case "Black":
+					displayColor = "Black";
+					colorHex = "#000000";
+					break;
+					case "Random":
+					displayColor = "Random";
+					colorHex = "#5c5c5c";
 					break;
 				}
 
-				$('#HeroColorContainer').style.backgroundColor = color
+				$('#HeroColorContainer').style.backgroundColor = colorHex
 			},
 
 			//Set the color of the players team
