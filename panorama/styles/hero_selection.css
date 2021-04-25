@@ -78,6 +78,7 @@
   horizontal-align: center;
   vertical-align: center;
   font-size: 40px;
+  flow-children: right;
 }
 
 /* Selection */

@@ -239,7 +239,7 @@ function LoadPlayers() {
 
   //Assign radiant players
   $.Each(radiantPlayers, function (player) {
-    var playerPanel = Modular.Spawn("picking_player", $("#StatusContainer"));
+    var playerPanel = Modular.Spawn("picking_player", $("#Status"));
     playerPanel.SetPlayer(player);
     playerPanel.SetTeam("Team 1");
 
@@ -249,7 +249,7 @@ function LoadPlayers() {
 
   //Assign dire players
   $.Each(direPlayers, function (player) {
-    var playerPanel = Modular.Spawn("picking_player", $("#StatusContainer"));
+    var playerPanel = Modular.Spawn("picking_player", $("#Status"));
     playerPanel.SetPlayer(player);
     playerPanel.SetTeam("Team 2");
 
