@@ -12,6 +12,11 @@ const toolTips = {
 		title: `Lumber`,
 		toolTip: `Lumber is earned by mining from Giant Trees.`,
 	},
+	tutorial: {
+		toolTipUI: $("#ResourceTutorialID"),
+		title: `Tutorial`,
+		toolTip: `Click to view the Barracks Master 2 tutorial.`,
+	},
 };
 
 function showToolTip(resourceType) {

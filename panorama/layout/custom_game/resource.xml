@@ -21,6 +21,17 @@
 		<Panel class="ResourceImage">
 			<Image hittest="false"  src="file://{images}/custom_game/panorama_bm_logo_small.png" />
 		</Panel>
+<!--		<Panel id="ResourceTutorialID" class="ResourceTutorial" onmouseover="showToolTip('tutorial')" onmouseout="DOTAHideTitleTextTooltip()">
+-->
+		<Panel class="ResourceTutorial">
+			<Image hittest="false"  src="file://{images}/custom_game/black_icon.png" />
+		</Panel>
+		<Panel class="ResourceTechTree">
+			<Image hittest="false"  src="file://{images}/custom_game/black_icon.png" />
+		</Panel>
+		<Panel class="ResourceFeedback">
+			<Image hittest="false"  src="file://{images}/custom_game/black_icon.png" />
+		</Panel>
 	</Panel>
 	</Panel>
 </root>
