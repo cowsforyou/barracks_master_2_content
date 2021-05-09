@@ -288,15 +288,15 @@ function SwitchToHeroPreview(heroName) {
   let factionDescriptionHash;
 
   if (heroName === "npc_dota_hero_keeper_of_the_light") {
-    factionNamePreview = "Ling";
+    factionNamePreview = "#faction_ling";
     factionDescriptionHash = "#bm_ling_lore";
     selectedHero = "npc_dota_hero_keeper_of_the_light";
   } else if (heroName === "npc_dota_hero_nevermore") {
-    factionNamePreview = "Xoo";
+    factionNamePreview = "#faction_xoo";
     factionDescriptionHash = "#bm_xoo_lore";
     selectedHero = "npc_dota_hero_nevermore";
   } else {
-    factionNamePreview = "Random";
+    factionNamePreview = "#faction_random";
     factionDescriptionHash = "#bm_random_lore";
     const random = Math.round(Math.random());
 
@@ -339,6 +339,33 @@ function SelectPerk(perk) {
     perk,
   });
 }
+
+
+/* Mouseover for perks - cows */
+
+const toolTips = {
+  rangeperk: {
+    toolTipUI: $("#SelectRangePerk"),
+    title: "#perk_range_title",
+    toolTip: "#perk_range_des",
+  },
+  damageperk: {
+    toolTipUI: $("#SelectDamagePerk"),
+    title: "#perk_damage_title",
+    toolTip: "#perk_damage_des",
+  },
+  healthperk: {
+    toolTipUI: $("#SelectHealthPerk"),
+    title: "#perk_health_title",
+    toolTip: "#perk_health_des",
+  },
+};
+
+function showToolTip(resourceType) {
+  const {toolTipUI, title, toolTip} = toolTips[resourceType];
+  $.DispatchEvent("DOTAShowTitleTextTooltip", toolTipUI, title, toolTip);
+}
+
 
 /* Confirms a hero and color, called when a player clicks on Ready*/
 function SelectHero() {

@@ -30,7 +30,7 @@
 			<Panel class="PlayerStatsDetailsTitle">
 				<Label text="Rating" />
 				<Label text="Season Rank" />
-				<Label text="Games Player" />
+				<Label text="Games Played" />
 				<Label text="Games Won" />
 				<Label text="Win %" />
 				<Label text="Favourite Color" />

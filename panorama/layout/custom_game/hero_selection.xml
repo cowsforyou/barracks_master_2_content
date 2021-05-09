@@ -30,7 +30,7 @@
 			</Panel>
 			</Panel>
 			<Panel class="ColorSelector">
-				<Label class="SelectionTitle" text="Color" />
+				<Label class="SelectionTitle" text="title_color" />
 				<Panel class="ColorSelectorParent">
 					<Panel class="ColorSelectorContainer">
 						<RadioButton id="SelectColorRandom" class="SelectColorButton" group="SelectColorRadio" onactivate="SelectColor('Random')">
@@ -53,22 +53,22 @@
 				</Panel>
 			</Panel>
 			<Panel id="FactionSelector">
-				<Label id="FactionTitle" class="SelectionTitle" text="Faction Selector" />
+				<Label id="FactionTitle" class="SelectionTitle" text="#title_faction" />
 				<Panel id="FactionIcon">
 					<RadioButton id="SelectRandomFaction" class="PreviewFactionButton" group="SelectFactionRadio" onactivate="SwitchToHeroPreview('npc_dota_hero_error')" />
 					<RadioButton id="SelectLingFaction" class="PreviewFactionButton" group="SelectFactionRadio" onactivate="SwitchToHeroPreview('npc_dota_hero_keeper_of_the_light')" />
 					<RadioButton id="SelectXoyaFaction" class="PreviewFactionButton" group="SelectFactionRadio" onactivate="SwitchToHeroPreview('npc_dota_hero_nevermore')" />
 				</Panel>
 
-				<Label id="PerkTitle" class="PerkSelectionTitle" text="Perk Selector" />
+				<Label id="PerkTitle" class="PerkSelectionTitle" text="#title_perk" />
 				<Panel id="PerkIcon">
-					<RadioButton id="SelectRangePerk" class="PreviewPerkButton" group="SelectPerkRadio"  onactivate="SelectPerk( 'perk_range' )"/>
-					<RadioButton id="SelectDamagePerk" class="PreviewPerkButton" group="SelectPerkRadio" onactivate="SelectPerk( 'perk_damage' )" />
-					<RadioButton id="SelectHealthPerk" class="PreviewPerkButton" group="SelectPerkRadio" onactivate="SelectPerk( 'perk_health' )" />
+					<RadioButton id="SelectRangePerk" class="PreviewPerkButton" group="SelectPerkRadio"  onactivate="SelectPerk( 'perk_range' )" onmouseover="showToolTip('rangeperk')" onmouseout="DOTAHideTitleTextTooltip()"/>
+					<RadioButton id="SelectDamagePerk" class="PreviewPerkButton" group="SelectPerkRadio" onactivate="SelectPerk( 'perk_damage' )" onmouseover="showToolTip('damageperk')" onmouseout="DOTAHideTitleTextTooltip()"/>
+					<RadioButton id="SelectHealthPerk" class="PreviewPerkButton" group="SelectPerkRadio" onactivate="SelectPerk( 'perk_health' )" onmouseover="showToolTip('healthperk')" onmouseout="DOTAHideTitleTextTooltip()"/>
 				</Panel>
 
-				<Label id="CustomisationTitle" class="PerkSelectionTitle" text="Customization" />
-				<Label class="CustomiseDescription" text="COMING SOON" />
+				<Label id="CustomisationTitle" class="PerkSelectionTitle" text="#title_customization" />
+				<Label class="CustomiseDescription" text="#customization_description" />
 			</Panel>
 			<Panel id="CustomisationSelector">
 				<DOTAScenePanel id="HeroPreview" particleonly="false" class="RandomFactionPreview" unit="random" />
