@@ -288,15 +288,15 @@ function SwitchToHeroPreview(heroName) {
   let factionDescriptionHash;
 
   if (heroName === "npc_dota_hero_keeper_of_the_light") {
-    factionNamePreview = "#faction_ling";
+    factionNamePreview = "Ling";
     factionDescriptionHash = "#bm_ling_lore";
     selectedHero = "npc_dota_hero_keeper_of_the_light";
   } else if (heroName === "npc_dota_hero_nevermore") {
-    factionNamePreview = "#faction_xoo";
+    factionNamePreview = "Xoo";
     factionDescriptionHash = "#bm_xoo_lore";
     selectedHero = "npc_dota_hero_nevermore";
   } else {
-    factionNamePreview = "#faction_random";
+    factionNamePreview = "Random";
     factionDescriptionHash = "#bm_random_lore";
     const random = Math.round(Math.random());
 
