@@ -481,9 +481,25 @@ function SelectHero() {
   } else if (selectedPerk === "perk_damage") {
     $("#SelectDamagePerk") &&
       $("#SelectDamagePerk").AddClass("PreviewButtonSelected");
-  } else {
+  } else if (selectedPerk === "perk_range") {
     $("#SelectRangePerk") &&
       $("#SelectRangePerk").AddClass("PreviewButtonSelected");
+  } else {
+    const random = Math.round(Math.random() * 2);
+
+    if (random === 0) {
+      $("#SelectRangePerk") &&
+      $("#SelectRangePerk").AddClass("PreviewButtonSelected");
+      SelectPerk('perk_range')
+    } else if (random === 1) {
+      $("#SelectDamagePerk") &&
+      $("#SelectDamagePerk").AddClass("PreviewButtonSelected");
+      SelectPerk('perk_damage')
+    } else {
+      $("#SelectHealthPerk") &&
+      $("#SelectHealthPerk").AddClass("PreviewButtonSelected");
+      SelectPerk('perk_health')
+    }
   }
 
   if (selectedHero === "npc_dota_hero_keeper_of_the_light") {
