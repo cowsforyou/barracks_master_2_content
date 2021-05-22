@@ -51,6 +51,7 @@ GameEvents.Subscribe("player_color_preview_pick", onPlayerColorSelect);
 GameEvents.Subscribe("player_color_confirmed_pick", onPlayerColorConfirmed);
 GameEvents.Subscribe("get_player_premium_colors", onGetPlayerPremiumColors);
 GameEvents.Subscribe("send_map_info", onGetMapInfo);
+GameEvents.Subscribe('userinfo_data_update', onUserInfoDataUpdate);
 
 /* Event Handlers
 =========================================================================*/
@@ -228,6 +229,82 @@ function onGetMapInfo(mapData) {
     $("#Map").AddClass("MapMexicanStandOff");
   }
 }
+
+function onUserInfoDataUpdate(userInfoData) {
+  var statPanel = Modular.Spawn("player_stats", $("#InformationPreview"));
+  statPanel.SetPlayer(Game.GetLocalPlayerID());
+  statPanel.SetRating(userInfoData.totalBMPoints);
+  statPanel.SetGameData(userInfoData.gamesPlayed, userInfoData.gamesWon);
+
+  let favouriteRace = 'Ling';
+  let favouriteRaceCount = userInfoData.playedAsLing;
+  
+  if (userInfoData.playedAsXoo > favouriteRaceCount) {
+    favouriteRace = 'Xoo';
+    favouriteRaceCount = userInfoData.playedAsXoo;
+  }
+
+  if (userInfoData.playedAsRandom > favouriteRaceCount) {
+    favouriteRace = 'Random';
+    favouriteRaceCount = userInfoData.playedAsRandom;
+  }
+
+  statPanel.SetMostPlayedFaction(favouriteRace);
+
+  let favoriteColorContainer = [
+    {
+      color: 'Green',
+      value: userInfoData.playedAsColorGreen || 0
+    },
+    {
+      color: 'Yellow',
+      value: userInfoData.playedAsColorYellow || 0
+    },
+    {
+      color: 'Red',
+      value: userInfoData.playedAsColorRed || 0
+    },
+    {
+      color: 'Pink',
+      value: userInfoData.playedAsColorPink || 0
+    },
+    {
+      color: 'Gold',
+      value: userInfoData.playedAsColorGold || 0
+    },
+    {
+      color: 'Purple',
+      value: userInfoData.playedAsColorPurple || 0
+    },
+    {
+      color: 'Blue',
+      value: userInfoData.playedAsColorBlue || 0
+    },
+    {
+      color: 'Silver',
+      value: userInfoData.playedAsColorSilver || 0
+    },
+    {
+      color:'Black', 
+      value: userInfoData.playedAsColorBlack || 0
+    },
+    {
+      color: 'Light Blue',
+      value: userInfoData.playedAsColorLightBlue || 0
+    },
+    {
+      color: 'Light Green',
+      value: userInfoData.playedAsColorLightGreen || 0
+    }
+  ];
+
+  favoriteColorContainer.sort(
+    (colorOne, colorTwo) => colorTwo.value - colorOne.value
+    );
+
+  statPanel.SetFavoriteColor(favoriteColorContainer[0].color);
+}
+
 /* Functionality
 =========================================================================*/
 
@@ -256,9 +333,6 @@ function LoadPlayers() {
     //Save the panel for later
     playerPanels[player] = playerPanel;
   });
-
-  var statPanel = Modular.Spawn("player_stats", $("#InformationPreview"));
-  statPanel.SetPlayer(Game.GetLocalPlayerID());
 }
 
 /* A player has picked a hero, update the status screen. */
