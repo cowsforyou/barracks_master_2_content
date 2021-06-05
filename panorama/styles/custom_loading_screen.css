@@ -68,7 +68,7 @@ Left Panel Backgrounds
   margin-top: 400px;
   opacity: 0.98;
   background-color: black;
-  background-image: url("file://{images}/custom_game/loading_screen/banner2.jpg");
+  background-image: url("file://{images}/custom_game/loading_screen/banner3.jpg");
   background-size: 100% 100%;
   box-shadow: 0 0 8px 0 rgba(215, 138, 5, 0.75);
   animation-name: fadeInBanner;
