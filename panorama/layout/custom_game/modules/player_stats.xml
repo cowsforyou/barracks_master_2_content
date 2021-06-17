@@ -19,24 +19,24 @@
 			},
 
 			//Set player BM points
-			SetRating : function ( points ) {
+			SetRating : function( points ) {
 				$('#PlayerRating').text = points
 			},
 
 			//Set player games data
-			SetGameData : function ( gamesPlayed, gamesWon ) {
+			SetGameData : function( gamesPlayed, gamesWon ) {
 				$('#PlayerGamesPlayed').text = gamesPlayed
 				$('#PlayerGamesWon').text = gamesWon
 				$('#PlayerWinRate').text = ((gamesWon / gamesPlayed) * 100) + "%"
 			},
 
 			//Set player favorite color
-			SetFavoriteColor : function ( favoriteColor ) {
+			SetFavoriteColor : function( favoriteColor ) {
 				$('#PlayerFavoriteColor').text = favoriteColor
 			},
 
 			//Set player most played faction
-			SetMostPlayedFaction : function ( mostPlayedFaction ) {
+			SetMostPlayedFaction : function( mostPlayedFaction ) {
 				$('#PlayerMostPlayedFaction').text = mostPlayedFaction
 			},
 		});
