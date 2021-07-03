@@ -19,8 +19,13 @@
 			},
 
 			//Set player BM points
+			SetBMPoints : function( points ) {
+				$('#PlayerBMPoints').text = points
+			},
+
+			//Set player BM rating
 			SetRating : function( points ) {
-				$('#PlayerRating').text = points
+				$('#PlayerSeasonRating').text = points
 			},
 
 			//Set player games data
@@ -49,8 +54,8 @@
 		</Panel>
 		<Panel class="PlayerStatsDetailsContainer">
 			<Panel class="PlayerStatsDetailsTitle">
-				<Label text="Rating" />
-				<Label text="Season Rank" />
+				<Label text="BM Points" />
+				<Label text="Season Rating" />
 				<Label text="Games Played" />
 				<Label text="Games Won" />
 				<Label text="Win %" />
@@ -58,8 +63,8 @@
 				<Label text="Most Played Faction" />
 			</Panel>
 			<Panel class="PlayerStatsDetailsValue">
-				<Label id='PlayerRating' text="Calibrating" />
-				<Label id='PlayerSeasonRank' text="Calibrating" />
+				<Label id='PlayerBMPoints' text="Calibrating" />
+				<Label id='PlayerSeasonRating' text="Calibrating" />
 				<Label id='PlayerGamesPlayed' text="Calibrating" />
 				<Label id='PlayerGamesWon' text="Calibrating" />
 				<Label id='PlayerWinRate' text="Calibrating" />

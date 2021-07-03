@@ -233,8 +233,12 @@ function onGetMapInfo(mapData) {
 function onUserInfoDataUpdate(userInfoData) {
   var statPanel = Modular.Spawn("player_stats", $("#InformationPreview"));
   statPanel.SetPlayer(Game.GetLocalPlayerID());
-  statPanel.SetRating(userInfoData.totalBMPoints);
+  statPanel.SetBMPoints(userInfoData.totalBMPoints);
   statPanel.SetGameData(userInfoData.gamesPlayed, userInfoData.gamesWon);
+  
+  if (userInfoData.gamesPlayed > 2 && userInfoData.BMRating) {
+    statPanel.SetRating(userInfoData.BMRating)
+  }
 
   let favouriteRace = 'Ling';
   let favouriteRaceCount = userInfoData.playedAsLing;
