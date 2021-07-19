@@ -16,15 +16,15 @@
 			</Panel>
 
 			<Panel id="PlayerColorContainer" class="ScoreCol_Player_Color ScoreboardPanel">
-				<Label id="PlayerColor" text="c" />
+				<Label id="PlayerColor" text="Soon" />
 			</Panel>
 
 			<Panel id="BMRatingContainer" class="ScoreCol_BM_Rating ScoreboardPanel">
-				<Label id="BMRating" text="999" />
+				<Label id="BMRating" text="Soon" />
 			</Panel>
 
 			<Panel id="RatingChangeContainer" class="ScoreCol_Rating_Change ScoreboardPanel">
-				<Label id="RatingChange" text="999" />
+				<Label id="RatingChange" text="Soon" />
 			</Panel>
 
 			<Panel id="BMGoldContainer" class="ScoreCol_BM_Gold ScoreboardPanel">
