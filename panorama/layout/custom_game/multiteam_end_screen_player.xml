@@ -14,18 +14,35 @@
 					<Label id="HeroNameAndDescription" text="#custom_scoreboard_hero_name_and_desc" />
 				</Panel>
 			</Panel>
-			<Panel id="ScoreContainer" class="ScoreCol_BM_Points ScoreboardPanel">
-				<Label id="PlayerScore" text="999" />
+
+			<Panel id="PlayerColorContainer" class="ScoreCol_Player_Color ScoreboardPanel">
+				<Label id="PlayerColor" text="c" />
 			</Panel>
+
+			<Panel id="BMRatingContainer" class="ScoreCol_BM_Rating ScoreboardPanel">
+				<Label id="BMRating" text="999" />
+			</Panel>
+
+			<Panel id="RatingChangeContainer" class="ScoreCol_Rating_Change ScoreboardPanel">
+				<Label id="RatingChange" text="999" />
+			</Panel>
+
+			<Panel id="BMGoldContainer" class="ScoreCol_BM_Gold ScoreboardPanel">
+				<Label id="BMGold" text="999" />
+			</Panel>
+
 			<Panel id="CSContainer" class="ScoreCol_CS ScoreboardPanel">
 				<Label id="CS" text="999" />
 			</Panel>
+
 			<Panel id="NetWorthContainer" class="ScoreCol_NetWorth ScoreboardPanel">
 				<Label id="NetWorth" text="999" />
 			</Panel>
+
 			<Panel id="GoldContainer" class="ScoreCol_Gold ScoreboardPanel">
 				<Label id="Gold" text="999" />
 			</Panel>
+
 			<Panel id="LumberContainer" class="ScoreCol_Lumber ScoreboardPanel">
 				<Label id="Lumber" text="999" />
 			</Panel>

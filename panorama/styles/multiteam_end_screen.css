@@ -268,6 +268,10 @@
 #KillsContainer,
 #DeathsContainer,
 #AssistsContainer,
+#PlayerColorContainer,
+#BMRatingContainer,
+#RatingChangeContainer,
+#BMGoldContainer,
 #CSContainer,
 #ScoreContainer,
 #NetWorthContainer,
@@ -320,10 +324,13 @@
 #Kills,
 #Deaths,
 #Assists,
+#BMRating,
+#RatingChange,
+#BMGold,
 #CS,
 #NetWorth,
 #Gold,
-#PlayerScore,
+#BMGold,
 #Lumber,
 {
 	horizontal-align: center;
@@ -333,7 +340,7 @@
 	margin-top: 3px;
 }
 
-#PlayerScore
+#BMGold
 {
     font-weight: bold;
 }
@@ -401,7 +408,10 @@
 	width: 170px;
 }
 
-.ScoreCol_RatingChange
+.ScoreCol_Player_Color,
+.ScoreCol_BM_Rating,
+.ScoreCol_Rating_Change,
+.ScoreCol_BM_Gold,
 {
 	width: 60px;
 	text-align: center;

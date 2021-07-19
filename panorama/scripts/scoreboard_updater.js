@@ -90,13 +90,13 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
     if ( playerInfo )
     {
         var playerScore = GetBMPointsForPlayer(playerId)
-        _ScoreboardUpdater_SetTextSafe( playerPanel, "PlayerScore", "+"+playerScore )
+        _ScoreboardUpdater_SetTextSafe( playerPanel, "BMGold", "+"+playerScore )
 
         //color the points
         if (playerInfo.player_connection_state != DOTAConnectionState_t.DOTA_CONNECTION_STATE_CONNECTED)
-            _ScoreboardUpdater_SetColorSafe( playerPanel, "PlayerScore", "#FF0000")
+            _ScoreboardUpdater_SetColorSafe( playerPanel, "BMGold", "#FF0000")
         else
-            _ScoreboardUpdater_SetColorSafe( playerPanel, "PlayerScore", "#00FF00")
+            _ScoreboardUpdater_SetColorSafe( playerPanel, "BMGold", "#00FF00")
 
         isTeammate = ( playerInfo.player_team_id == localPlayerTeamId );
         if ( isTeammate )
