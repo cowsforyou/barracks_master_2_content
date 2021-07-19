@@ -17,7 +17,6 @@
 			<Panel id="ScoreContainer" class="ScoreCol_BM_Points ScoreboardPanel">
 				<Label id="PlayerScore" text="999" />
 			</Panel>
-
 			<Panel id="CSContainer" class="ScoreCol_CS ScoreboardPanel">
 				<Label id="CS" text="999" />
 			</Panel>
