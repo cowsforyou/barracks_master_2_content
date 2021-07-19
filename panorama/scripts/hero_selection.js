@@ -239,6 +239,9 @@ function onUserInfoDataUpdate(userInfoData) {
   if (userInfoData.gamesPlayed > 2 && userInfoData.BMRating) {
     statPanel.SetRating(userInfoData.BMRating)
   }
+  if (userInfoData.playerRank) {
+    statPanel.SetRank(userInfoData.playerRank);
+  }
 
   let favouriteRace = 'Ling';
   let favouriteRaceCount = userInfoData.playedAsLing;
