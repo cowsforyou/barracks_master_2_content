@@ -28,6 +28,11 @@
 				$('#PlayerSeasonRating').text = points
 			},
 
+			//Set player season rank
+			SetRank : function( points ) {
+				$('#PlayerSeasonRank').text = points
+			},
+
 			//Set player games data
 			SetGameData : function( gamesPlayed, gamesWon ) {
 				$('#PlayerGamesPlayed').text = gamesPlayed
@@ -56,6 +61,7 @@
 			<Panel class="PlayerStatsDetailsTitle">
 				<Label text="BM Points" />
 				<Label text="Season Rating" />
+				<Label text="Season Rank" />
 				<Label text="Games Played" />
 				<Label text="Games Won" />
 				<Label text="Win %" />
@@ -65,6 +71,7 @@
 			<Panel class="PlayerStatsDetailsValue">
 				<Label id='PlayerBMPoints' text="Calibrating" />
 				<Label id='PlayerSeasonRating' text="Calibrating" />
+				<Label id='PlayerSeasonRank' text="Calibrating" />
 				<Label id='PlayerGamesPlayed' text="Calibrating" />
 				<Label id='PlayerGamesWon' text="Calibrating" />
 				<Label id='PlayerWinRate' text="Calibrating" />
